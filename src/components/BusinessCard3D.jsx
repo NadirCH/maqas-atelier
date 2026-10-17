@@ -123,7 +123,7 @@ export default function BusinessCard3D() {
                 <div className="border-t border-[#5E548E]/50 pt-2 flex items-center justify-between text-xs text-gray-300">
                   <div className="flex items-center gap-1.5 text-[#E0B1CB] font-mono" dir="ltr">
                     <Phone className="w-3.5 h-3.5" />
-                    <span>+966 50 000 0000</span>
+                    <span>+213 550 00 00 00</span>
                   </div>
                   <div className="flex items-center gap-1 text-[11px] text-gray-300">
                     <MessageSquare className="w-3 h-3 text-[#E0B1CB]" />

@@ -4,9 +4,9 @@
  */
 import { sanitizeUrl } from '../utils/sanitize';
 
-const rawWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '966500000000';
+const rawWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '213550000000';
 // Guarantee only digits are passed to the WhatsApp URL protocol
-const cleanWhatsAppNumber = String(rawWhatsApp).replace(/[^0-9]/g, '') || '966500000000';
+const cleanWhatsAppNumber = String(rawWhatsApp).replace(/[^0-9]/g, '') || '213550000000';
 
 export const siteConfig = {
   brandName: 'مَقاس | MAQAS',
