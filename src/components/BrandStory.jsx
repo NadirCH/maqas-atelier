@@ -59,7 +59,7 @@ export default function BrandStory() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#5E548E] shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700 font-medium">جلسات قياس فردية مجدولة مسبقاً</span>
+                  <span className="text-sm text-gray-700 font-medium">مواعيد قياس منظمة ومجدولة مسبقاً</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#5E548E] shrink-0 mt-0.5" />

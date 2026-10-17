@@ -94,7 +94,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
                   حجز موعد قياس خاص
                 </h3>
                 <span className="text-xs text-[#5E548E] font-tajawal font-medium">
-                  جلسة فردية هادئة مخصصة لكِ وحدكِ
+                  لتعديل وتفصيل أزيائكِ بأعلى درجات الإتقان
                 </span>
               </div>
             </div>

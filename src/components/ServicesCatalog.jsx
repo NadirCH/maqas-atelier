@@ -39,7 +39,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       price: 'من 2,500 إلى 6,000 د.ج',
       time: '3 إلى 5 أيام',
       featured: true,
-      features: ['تعديل طبقات التول والبطانة بعناية يدوية', 'صيانة التطريز وحبات الخرز الدقيقة', 'جلسة قياس فردية وتجربة خاصة في المحل']
+      features: ['تعديل طبقات التول والبطانة بعناية يدوية', 'صيانة التطريز وحبات الخرز الدقيقة', 'أخذ قياسات دقيقة وعناية خاصة بكل قطعة']
     },
     {
       id: 2,
@@ -387,7 +387,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                     {estimatedMin.toLocaleString()} - {estimatedMax.toLocaleString()} <span className="text-lg font-tajawal text-white">د.ج</span>
                   </div>
                   <span className="text-[11px] text-gray-400 mt-1 block">
-                    * يتم تأكيد السعر النهائي بدقة عند معاينة القطعة خلال جلسة القياس
+                    * يتم تأكيد السعر النهائي بدقة عند معاينة القطعة وأخذ المقاسات في المحل
                   </span>
                 </div>
               </div>

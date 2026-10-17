@@ -45,7 +45,7 @@ export default function Hero({ onOpenBooking }) {
 
             {/* Subtext describing Brand Overview */}
             <p className="font-tajawal text-lg sm:text-xl text-[#231942]/85 leading-relaxed max-w-2xl mb-8">
-              في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، نعتني بإطلالتكِ ونمنحكِ تجربة استثنائية تجمع بين الراحة والخصوصية التامة. ابتعدي عن صخب المحلات المزدحمة، واستمتعي بجلسة قياس هادئة وتعديل رفيع المستوى لفساتينكِ وأزيائكِ بأيدي خياطة خبيرة.
+              في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، نعتني بإطلالتكِ ونمنحكِ تجربة استثنائية تجمع بين الراحة والخصوصية التامة. ابتعدي عن صخب المحلات المزدحمة، واستمتعي بأخذ قياسات متقنة وتعديل رفيع المستوى لفساتينكِ وأزيائكِ بأيدي خياطة خبيرة.
             </p>
 
             {/* Primary Action Buttons with Antigravity Tactile Micro-Interactions */}
@@ -97,7 +97,7 @@ export default function Hero({ onOpenBooking }) {
                 </div>
                 <div>
                   <div className="font-bold text-xs text-[#231942]">مواعيد دقيقة دون انتظار</div>
-                  <div className="text-[11px] text-gray-500">جلسة قياس فردية مكرسة لكِ وحدكِ</div>
+                  <div className="text-[11px] text-gray-500">استقبال منظم في بيئة هادئة ومريحة</div>
                 </div>
               </div>
             </div>
