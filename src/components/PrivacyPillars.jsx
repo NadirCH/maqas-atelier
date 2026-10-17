@@ -27,21 +27,26 @@ export default function PrivacyPillars() {
   ];
 
   return (
-    <section id="privacy" className="py-20 md:py-28 bg-[#FAF5F9] relative overflow-hidden">
+    <section id="privacy" className="py-20 md:py-28 bg-[#FAF5F9] relative overflow-hidden select-none">
       
-      {/* Decorative thread curve */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#E0B1CB]/20 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Decorative Antigravity Thread Curve & Aurora */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-[#E0B1CB]/25 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#5E548E]/15 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '2.5s' }}></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Banner from Guide: "بانر الباب: إبراز عبارة مخصص للنساء فقط بخط واضح" */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-[#231942] text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-[#5E548E] relative overflow-hidden text-center">
+        {/* Floating Door Plaque (بانر الباب: مخصص للنساء فقط) */}
+        <div className="max-w-4xl mx-auto mb-16 relative">
+          
+          {/* Spatial glowing backlight */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E548E]/30 via-[#E0B1CB]/40 to-[#5E548E]/30 rounded-[32px] blur-xl transform -rotate-1 pointer-events-none"></div>
+
+          <div className="relative bg-[#231942]/95 backdrop-blur-xl text-white rounded-3xl p-7 sm:p-10 shadow-2xl border-2 border-[#5E548E]/70 overflow-hidden text-center card-luxury">
             
             {/* Top decorative stitch line */}
-            <div className="w-24 h-1 bg-[#E0B1CB] mx-auto rounded-full mb-4"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#E0B1CB] to-transparent mx-auto rounded-full mb-4"></div>
 
-            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#E0B1CB]/20 border border-[#E0B1CB]/40 text-[#E0B1CB] text-xs font-bold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#E0B1CB]/20 border border-[#E0B1CB]/40 text-[#E0B1CB] text-xs font-bold mb-4 backdrop-blur-sm">
               <Shield className="w-3.5 h-3.5" />
               <span>مواصفات لافتة الباب والمدخل المعتمدة</span>
             </div>
@@ -54,16 +59,16 @@ export default function PrivacyPillars() {
               هذه العبارة ليست مجرد لافتة على مدخلنا، بل هي ميثاق الأمان والراحة التامة لكل سيدة تضع ثقتها في محل "مَقاس" للخياطة.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-[#E0B1CB]">
-              <span className="flex items-center gap-1.5 bg-[#1a1233] px-3.5 py-1.5 rounded-full border border-[#5E548E]">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3.5 text-xs text-[#E0B1CB]">
+              <span className="flex items-center gap-1.5 bg-[#1a1233]/90 px-4 py-2 rounded-full border border-[#5E548E]/70 shadow-sm backdrop-blur-sm">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                 طاقم عمل نسائي محترف
               </span>
-              <span className="flex items-center gap-1.5 bg-[#1a1233] px-3.5 py-1.5 rounded-full border border-[#5E548E]">
+              <span className="flex items-center gap-1.5 bg-[#1a1233]/90 px-4 py-2 rounded-full border border-[#5E548E]/70 shadow-sm backdrop-blur-sm">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                 حرمة المكان وخصوصية القياس
               </span>
-              <span className="flex items-center gap-1.5 bg-[#1a1233] px-3.5 py-1.5 rounded-full border border-[#5E548E]">
+              <span className="flex items-center gap-1.5 bg-[#1a1233]/90 px-4 py-2 rounded-full border border-[#5E548E]/70 shadow-sm backdrop-blur-sm">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                 باب محمي ومغلق بالكامل
               </span>
@@ -82,18 +87,18 @@ export default function PrivacyPillars() {
           </p>
         </div>
 
-        {/* 4 Pillars Grid */}
+        {/* 4 Pillars Grid with Antigravity Glass & Hover Levitation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((p, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-3xl p-7 border border-[#E0B1CB]/40 shadow-sm hover:shadow-md hover:border-[#5E548E] transition-all duration-300 flex flex-col justify-between"
+              className="bg-white/85 backdrop-blur-md rounded-3xl p-7 border border-[#E0B1CB]/40 shadow-sm hover:shadow-xl hover:border-[#5E548E] transition-all duration-400 hover:-translate-y-2 flex flex-col justify-between group"
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-[#231942] flex items-center justify-center mb-6 shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-[#231942] group-hover:bg-[#342461] group-hover:rotate-3 flex items-center justify-center mb-6 shadow-md transition-all duration-300">
                   {p.icon}
                 </div>
-                <h3 className="font-amiri text-xl font-bold text-[#231942] mb-3">
+                <h3 className="font-amiri text-xl font-bold text-[#231942] mb-3 group-hover:text-[#5E548E] transition-colors">
                   {p.title}
                 </h3>
                 <p className="font-tajawal text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -102,7 +107,7 @@ export default function PrivacyPillars() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-bold text-[#5E548E]">
-                <Sparkles className="w-3 h-3 text-[#E0B1CB]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#E0B1CB] animate-pulse" />
                 <span>معيار معتمد في محل مَقاس للخياطة</span>
               </div>
             </div>

@@ -1,17 +1,19 @@
 import React from 'react';
-import { Calendar, MessageSquare, Sparkles, ShieldCheck, Scissors, Ruler, Heart, Clock } from 'lucide-react';
+import { Calendar, MessageSquare, Sparkles, ShieldCheck, Scissors, Ruler, Heart, Clock, Gem } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Hero({ onOpenBooking }) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#F5F5F5] via-[#FAF5F9] to-[#F5F5F5]">
-      {/* Decorative Atelier Background Motifs */}
-      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#E0B1CB]/25 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute -bottom-10 -left-20 w-80 h-80 bg-[#5E548E]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#F5F5F5] via-[#FAF5F9] to-[#F5F5F5] select-none">
       
-      {/* Subtle Tailor Thread Line in Background */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+      {/* Antigravity Floating Aurora Orbs */}
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#E0B1CB]/30 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
+      <div className="absolute -bottom-10 -left-20 w-80 h-80 bg-[#5E548E]/20 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '3.5s' }}></div>
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#E0B1CB]/15 rounded-full blur-3xl pointer-events-none animate-float-gentle"></div>
+      
+      {/* Spatial Tailor Thread Lines with Floating Drift */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg">
         <path d="M-100,100 C300,50 400,300 800,200 C1200,100 1300,400 1700,250" fill="none" stroke="#5E548E" strokeWidth="1.5" strokeDasharray="6 6" />
         <path d="M-50,300 C200,450 600,200 1000,400 C1400,600 1500,200 1800,350" fill="none" stroke="#E0B1CB" strokeWidth="1.2" strokeDasharray="4 8" />
       </svg>
@@ -23,7 +25,7 @@ export default function Hero({ onOpenBooking }) {
           <div className="lg:col-span-7 text-right">
             
             {/* Exclusive Atelier Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB] text-[#231942] text-xs sm:text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB]/60 text-[#231942] text-xs sm:text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#5E548E] animate-ping"></span>
               <Sparkles className="w-4 h-4 text-[#5E548E]" />
               <span>محل خياطة نسائي خاص • مخصص للنساء حصراً</span>
@@ -42,33 +44,35 @@ export default function Hero({ onOpenBooking }) {
             </h1>
 
             {/* Subtext describing Brand Overview */}
-            <p className="font-tajawal text-lg sm:text-xl text-[#231942]/80 leading-relaxed max-w-2xl mb-8">
+            <p className="font-tajawal text-lg sm:text-xl text-[#231942]/85 leading-relaxed max-w-2xl mb-8">
               في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، نعتني بإطلالتكِ ونمنحكِ تجربة استثنائية تجمع بين الراحة والخصوصية التامة. ابتعدي عن صخب المحلات المزدحمة، واستمتعي بجلسة قياس هادئة وتعديل رفيع المستوى لفساتينكِ وأزيائكِ بأيدي خياطة خبيرة.
             </p>
 
-            {/* Primary Action Buttons */}
+            {/* Primary Action Buttons with Antigravity Tactile Micro-Interactions */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <button
                 onClick={onOpenBooking}
-                className="bg-[#231942] hover:bg-[#5E548E] text-[#F5F5F5] px-7 py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+                className="group relative bg-[#231942] hover:bg-[#342461] text-[#F5F5F5] px-7 py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-95 overflow-hidden"
               >
-                <Calendar className="w-5 h-5 text-[#E0B1CB]" />
+                {/* Light sweep specular glare effect */}
+                <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
+                <Calendar className="w-5 h-5 text-[#E0B1CB] transition-transform group-hover:rotate-6" />
                 <span>حجز موعد قياس خاص</span>
               </button>
 
               <a
                 href="#services"
-                className="bg-white hover:bg-gray-50 text-[#231942] border-2 border-[#5E548E]/30 hover:border-[#5E548E] px-6 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center gap-2.5 transition-all duration-300"
+                className="bg-white/80 hover:bg-white text-[#231942] border-2 border-[#5E548E]/30 hover:border-[#5E548E] px-6 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center gap-2.5 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95 backdrop-blur-sm"
               >
                 <Scissors className="w-5 h-5 text-[#5E548E]" />
                 <span>كتالوج الخدمات والأسعار</span>
               </a>
             </div>
 
-            {/* Key Trust Highlights (Three Pillars) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#E0B1CB]/40">
-              <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm p-3 rounded-xl border border-gray-100">
-                <div className="w-10 h-10 rounded-lg bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
+            {/* Key Trust Highlights (Three Glassmorphic Pillars) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-6 border-t border-[#E0B1CB]/40">
+              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
                   <ShieldCheck className="w-5 h-5 text-[#5E548E]" />
                 </div>
                 <div>
@@ -77,8 +81,8 @@ export default function Hero({ onOpenBooking }) {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm p-3 rounded-xl border border-gray-100">
-                <div className="w-10 h-10 rounded-lg bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
+              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
                   <Ruler className="w-5 h-5 text-[#5E548E]" />
                 </div>
                 <div>
@@ -87,8 +91,8 @@ export default function Hero({ onOpenBooking }) {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm p-3 rounded-xl border border-gray-100">
-                <div className="w-10 h-10 rounded-lg bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
+              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
                   <Clock className="w-5 h-5 text-[#5E548E]" />
                 </div>
                 <div>
@@ -100,21 +104,21 @@ export default function Hero({ onOpenBooking }) {
 
           </div>
 
-          {/* Visual Showcase Card & Haute Atelier Composition */}
+          {/* Visual Showcase Card & Spatial Haute Atelier Composition */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md">
               
-              {/* Outer decorative glowing ring */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#5E548E]/20 via-[#E0B1CB]/30 to-transparent rounded-3xl transform rotate-3 filter blur-md"></div>
+              {/* Outer decorative glowing ring with slow breathing animation */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#5E548E]/25 via-[#E0B1CB]/35 to-transparent rounded-3xl transform rotate-3 filter blur-md animate-pulse-aurora pointer-events-none"></div>
               
-              {/* Main Atelier Visual Card */}
-              <div className="relative bg-[#231942] text-[#F5F5F5] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#5E548E]/40 overflow-hidden">
+              {/* Main Atelier Visual Card with Deep Spatial Elevation */}
+              <div className="relative bg-[#231942]/95 backdrop-blur-xl text-[#F5F5F5] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#5E548E]/60 overflow-hidden card-luxury">
                 
                 {/* Background delicate stitch pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 border-b-2 border-l-2 border-dashed border-[#E0B1CB]/20 rounded-bl-3xl"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 border-b-2 border-l-2 border-dashed border-[#E0B1CB]/20 rounded-bl-3xl pointer-events-none"></div>
                 
                 {/* Card Header with Logo */}
-                <div className="flex items-center justify-between pb-6 border-b border-[#5E548E]/40">
+                <div className="flex items-center justify-between pb-6 border-b border-[#5E548E]/40 relative z-10">
                   <div className="flex items-center gap-3">
                     <MaqasLogo className="w-14 h-14" variant="dark" />
                     <div>
@@ -122,23 +126,23 @@ export default function Hero({ onOpenBooking }) {
                       <div className="text-xs text-[#E0B1CB] font-tajawal">للخياطة النسائية وتعديل الملابس</div>
                     </div>
                   </div>
-                  <div className="px-2.5 py-1 rounded-full bg-[#E0B1CB]/15 border border-[#E0B1CB]/30 text-[#E0B1CB] text-[11px] font-medium">
+                  <div className="px-3 py-1 rounded-full bg-[#E0B1CB]/15 border border-[#E0B1CB]/30 text-[#E0B1CB] text-[11px] font-medium backdrop-blur-sm">
                     محل خياطة خاص
                   </div>
                 </div>
 
-                {/* Central Emblem Artpiece */}
+                {/* Central Emblem Artpiece with Weightless Levitation Physics */}
                 <div className="my-8 text-center relative py-6">
-                  {/* Circular Glow */}
-                  <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-b from-[#5E548E]/40 to-[#E0B1CB]/20 p-1 flex items-center justify-center relative">
-                    <div className="w-full h-full rounded-full bg-[#1e1539] flex items-center justify-center p-4 border border-[#E0B1CB]/40">
+                  {/* Circular Glow with Float Physics */}
+                  <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-b from-[#5E548E]/50 to-[#E0B1CB]/25 p-1 flex items-center justify-center relative animate-float-gentle">
+                    <div className="w-full h-full rounded-full bg-[#1e1539] flex items-center justify-center p-4 border border-[#E0B1CB]/40 shadow-inner">
                       <MaqasLogo className="w-24 h-24" variant="dark" />
                     </div>
-                    {/* Floating mini badges */}
-                    <span className="absolute -top-2 right-4 bg-[#E0B1CB] text-[#231942] text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+                    {/* Floating mini satellite badges */}
+                    <span className="absolute -top-2 right-3 bg-[#E0B1CB] text-[#231942] text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-lg border border-white/40 animate-float-slow">
                       للنساء فقط
                     </span>
-                    <span className="absolute -bottom-2 left-4 bg-[#5E548E] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full shadow">
+                    <span className="absolute -bottom-2 left-3 bg-[#5E548E] text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full shadow-lg border border-white/20 animate-float-reverse">
                       حياكة راقية
                     </span>
                   </div>
@@ -149,22 +153,22 @@ export default function Hero({ onOpenBooking }) {
                 </div>
 
                 {/* Live Atelier Feature Box */}
-                <div className="bg-[#1a1233] rounded-2xl p-4 border border-[#5E548E]/50">
+                <div className="bg-[#1a1233]/90 rounded-2xl p-4 border border-[#5E548E]/50 backdrop-blur-md relative z-10">
                   <div className="flex items-center justify-between text-xs mb-2">
                     <span className="text-gray-300 font-medium flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                       قناة واتساب للأعمال الرسمية
                     </span>
-                    <span className="text-[#E0B1CB] text-[11px]">متاحة للاستفسار</span>
+                    <span className="text-[#E0B1CB] text-[11px] font-mono">+213 550 00 00 00</span>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed mb-3">
-                    تصفحي كتالوج التقديرات، وتابعي جاهزية القطع للاستلام عبر تطبيق واتساب.
+                    تصفحي كتالوج التقديرات، وتابعي جاهزية القطع للاستلام عبر تطبيق واتساب مباشرة.
                   </p>
                   <a
                     href={getWhatsAppUrl('السلام عليكم، أرغب في حجز موعد قياس لدى مَقاس')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-[#E0B1CB] hover:bg-[#d89fbe] text-[#231942] py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+                    className="w-full bg-[#E0B1CB] hover:bg-[#d89fbe] text-[#231942] py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>مراسلة عبر تطبيق واتساب الآن</span>
@@ -173,8 +177,8 @@ export default function Hero({ onOpenBooking }) {
 
               </div>
 
-              {/* Floating Pill on bottom right */}
-              <div className="absolute -bottom-5 -right-4 bg-white text-[#231942] p-3 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 text-xs animate-bounce" style={{ animationDuration: '4s' }}>
+              {/* Spatial Floating Badge on bottom right (Suspended with float physics) */}
+              <div className="absolute -bottom-5 -right-4 bg-white/95 backdrop-blur-md text-[#231942] p-3.5 rounded-2xl shadow-2xl border border-white/80 flex items-center gap-3 text-xs animate-float-slow z-20">
                 <div className="w-8 h-8 rounded-full bg-[#E0B1CB]/40 flex items-center justify-center text-[#5E548E]">
                   <Heart className="w-4 h-4 fill-current text-[#5E548E]" />
                 </div>
@@ -182,6 +186,12 @@ export default function Hero({ onOpenBooking }) {
                   <div className="font-bold">أمان تام واطمئنان</div>
                   <div className="text-[10px] text-gray-500">محل خياطة معتمد ومصون بالكامل</div>
                 </div>
+              </div>
+
+              {/* Spatial Floating Badge on top left (VIP Experience) */}
+              <div className="absolute -top-4 -left-4 bg-[#231942]/90 backdrop-blur-md text-white px-3 py-1.5 rounded-xl shadow-xl border border-[#E0B1CB]/30 flex items-center gap-2 text-[11px] animate-float-reverse z-20">
+                <Gem className="w-3.5 h-3.5 text-[#E0B1CB]" />
+                <span>حياكة متقنة وتفصيل هادئ</span>
               </div>
 
             </div>

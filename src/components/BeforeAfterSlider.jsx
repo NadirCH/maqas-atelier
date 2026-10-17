@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { Sparkles, Scissors, ShieldAlert, Eye, CheckCircle2, ArrowLeftRight } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Sparkles, Scissors, ShieldAlert, CheckCircle2, ArrowLeftRight, MoveHorizontal } from 'lucide-react';
 
 export default function BeforeAfterSlider() {
   const [activeCase, setActiveCase] = useState(0);
   const [sliderPos, setSliderPos] = useState(50); // percentage 0 to 100
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef(null);
 
   const cases = [
     {
@@ -61,9 +63,47 @@ export default function BeforeAfterSlider() {
 
   const current = cases[activeCase];
 
+  // Direct Drag Tracking
+  const updateSliderPos = (clientX) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const pos = ((clientX - rect.left) / rect.width) * 100;
+    const clamped = Math.max(5, Math.min(95, pos));
+    setSliderPos(clamped);
+  };
+
+  const handlePointerDown = (e) => {
+    setIsDragging(true);
+    updateSliderPos(e.clientX);
+  };
+
+  useEffect(() => {
+    const handlePointerMove = (e) => {
+      if (isDragging) {
+        updateSliderPos(e.clientX);
+      }
+    };
+    const handlePointerUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      window.addEventListener('pointermove', handlePointerMove);
+      window.addEventListener('pointerup', handlePointerUp);
+    }
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+    };
+  }, [isDragging]);
+
   return (
-    <section id="before-after" className="py-20 md:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="before-after" className="py-20 md:py-28 bg-white relative overflow-hidden select-none">
+      
+      {/* Antigravity Ambient Glow */}
+      <div className="absolute top-1/2 -right-36 w-80 h-80 bg-[#E0B1CB]/20 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -88,9 +128,9 @@ export default function BeforeAfterSlider() {
                 setActiveCase(idx);
                 setSliderPos(50);
               }}
-              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-tajawal font-bold transition-all ${
+              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-tajawal font-bold transition-all duration-300 ${
                 activeCase === idx
-                  ? 'bg-[#231942] text-[#F5F5F5] shadow-md scale-105'
+                  ? 'bg-[#231942] text-[#F5F5F5] shadow-lg scale-105'
                   : 'bg-[#F5F5F5] text-gray-700 hover:bg-[#E0B1CB]/20 border border-gray-200'
               }`}
             >
@@ -99,19 +139,23 @@ export default function BeforeAfterSlider() {
           ))}
         </div>
 
-        {/* The Visual Comparison Stage */}
-        <div className="bg-[#FAF5F9] rounded-3xl border border-[#E0B1CB]/50 p-6 sm:p-10 shadow-lg">
+        {/* The Visual Comparison Stage with Antigravity Glassmorphism */}
+        <div className="bg-[#FAF5F9]/80 backdrop-blur-md rounded-3xl border border-[#E0B1CB]/50 p-6 sm:p-10 shadow-xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8">
             
-            {/* Visual Interactive Slider (Simulated Work Table Split View) */}
+            {/* Visual Interactive Slider (Direct Drag enabled on entire canvas) */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-[#231942] aspect-[16/10] select-none">
+              <div 
+                ref={containerRef}
+                onPointerDown={handlePointerDown}
+                className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-[#231942] aspect-[16/10] cursor-ew-resize touch-none select-none"
+              >
                 
                 {/* "Before" Side (Left/Under) */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2d224e] to-[#1a1233] p-6 sm:p-8 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="bg-rose-500/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                    <span className="bg-rose-500/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                       قبل الحياكة (BEFORE)
                     </span>
                     <span className="text-gray-400 text-xs font-mono">طاولة العمل #01</span>
@@ -119,7 +163,7 @@ export default function BeforeAfterSlider() {
 
                   {/* Stylized Visual Mockup for BEFORE */}
                   <div className="my-auto text-center py-4">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-2 border-dashed border-rose-400/50 flex items-center justify-center bg-rose-950/30 mb-3">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-2 border-dashed border-rose-400/50 flex items-center justify-center bg-rose-950/30 mb-3 shadow-inner">
                       <Scissors className="w-10 h-10 text-rose-300 opacity-80 rotate-45" />
                     </div>
                     <div className="text-sm sm:text-base font-amiri text-rose-200 font-bold">
@@ -142,7 +186,7 @@ export default function BeforeAfterSlider() {
                   style={{ width: `${100 - sliderPos}%` }}
                 >
                   <div className="flex items-center justify-between w-full min-w-[280px]">
-                    <span className="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1">
+                    <span className="bg-emerald-600 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>بعد الإتقان (AFTER)</span>
                     </span>
@@ -151,8 +195,8 @@ export default function BeforeAfterSlider() {
 
                   {/* Stylized Visual Mockup for AFTER */}
                   <div className="my-auto text-center py-4 w-full min-w-[280px]">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-2 border-[#E0B1CB] flex items-center justify-center bg-[#E0B1CB]/20 mb-3 shadow-lg">
-                      <Sparkles className="w-10 h-10 text-[#E0B1CB]" />
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-2 border-[#E0B1CB] flex items-center justify-center bg-[#E0B1CB]/20 mb-3 shadow-xl">
+                      <Sparkles className="w-10 h-10 text-[#E0B1CB] animate-pulse" />
                     </div>
                     <div className="text-sm sm:text-base font-amiri text-[#E0B1CB] font-bold">
                       {current.after.highlight}
@@ -168,19 +212,19 @@ export default function BeforeAfterSlider() {
                   </div>
                 </div>
 
-                {/* Draggable Divider Handle Line */}
+                {/* Draggable Divider Handle Line with Spatial Halo */}
                 <div 
                   className="absolute inset-y-0 w-1 bg-[#E0B1CB] shadow-2xl pointer-events-none"
                   style={{ left: `${sliderPos}%` }}
                 >
-                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white text-[#231942] shadow-xl flex items-center justify-center border-2 border-[#5E548E] cursor-ew-resize">
+                  <div className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white text-[#231942] shadow-2xl flex items-center justify-center border-2 border-[#5E548E] transition-transform ${isDragging ? 'scale-110 ring-4 ring-[#E0B1CB]/60' : 'hover:scale-105'}`}>
                     <ArrowLeftRight className="w-4 h-4 text-[#5E548E]" />
                   </div>
                 </div>
 
               </div>
 
-              {/* Slider Control Bar */}
+              {/* Slider Control Bar & Hint */}
               <div className="mt-4 flex items-center gap-4">
                 <span className="text-xs font-bold text-gray-500 shrink-0">قبل الحياكة</span>
                 <input
@@ -193,6 +237,11 @@ export default function BeforeAfterSlider() {
                   aria-label="تحريك شريط المقارنة بين قبل وبعد"
                 />
                 <span className="text-xs font-bold text-[#5E548E] shrink-0">بعد التعديل</span>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-2 font-tajawal">
+                <MoveHorizontal className="w-3.5 h-3.5 text-[#5E548E]" />
+                <span>يمكن السحب أو اللمس مباشرة فوق الصورة للمقارنة التفاعلية</span>
               </div>
             </div>
 
@@ -211,7 +260,7 @@ export default function BeforeAfterSlider() {
                 </p>
 
                 {/* Craftsmanship Note */}
-                <div className="bg-white rounded-2xl p-5 border border-[#E0B1CB]/40 shadow-sm mb-6">
+                <div className="bg-white rounded-2xl p-5 border border-[#E0B1CB]/40 shadow-sm mb-6 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#231942] mb-2">
                     <Sparkles className="w-4 h-4 text-[#5E548E]" />
                     <span>ملاحظة الخبيرة على طاولة العمل:</span>
@@ -234,8 +283,8 @@ export default function BeforeAfterSlider() {
                 </div>
               </div>
 
-              {/* Privacy Notice Reminder (Page 4) */}
-              <div className="bg-[#231942] text-white p-4 rounded-2xl flex items-center gap-3 border border-[#5E548E]">
+              {/* Privacy Notice Reminder */}
+              <div className="bg-[#231942] text-white p-4 rounded-2xl flex items-center gap-3 border border-[#5E548E] shadow-md">
                 <div className="w-9 h-9 rounded-xl bg-[#E0B1CB]/20 flex items-center justify-center shrink-0">
                   <ShieldAlert className="w-5 h-5 text-[#E0B1CB]" />
                 </div>

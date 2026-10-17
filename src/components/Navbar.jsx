@@ -75,15 +75,15 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className={`transition-all duration-300 ${
+      <nav className={`transition-all duration-400 ${
         scrolled 
-          ? 'bg-[#F5F5F5]/95 backdrop-blur-md shadow-md py-2.5 border-b border-[#E0B1CB]/40' 
-          : 'bg-[#F5F5F5]/90 backdrop-blur-sm py-4'
+          ? 'bg-white/85 backdrop-blur-xl shadow-lg py-2.5 border-b border-[#E0B1CB]/40' 
+          : 'bg-[#F5F5F5]/85 backdrop-blur-md py-3.5 border-b border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo with Brand Name */}
-          <a href="#" className="flex items-center group">
+          <a href="#" className="flex items-center group transition-transform duration-300 hover:scale-[1.02]">
             <MaqasLogo 
               className="w-10 h-10 sm:w-12 sm:h-12" 
               variant="light" 
@@ -110,15 +110,15 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
           {/* Action CTAs & Status Indicator */}
           <div className="hidden md:flex items-center gap-3">
             {/* Atelier Status Indicator */}
-            <div className={`text-xs px-2.5 py-1 rounded-full border flex items-center gap-1.5 ${currentStatus.badge}`}>
-              <span className={`w-2 h-2 rounded-full animate-pulse ${currentStatus.color}`}></span>
-              <span className="font-medium">{currentStatus.text}</span>
+            <div className={`text-xs px-3 py-1 rounded-full border shadow-sm backdrop-blur-sm flex items-center gap-2 ${currentStatus.badge}`}>
+              <span className={`w-2 h-2 rounded-full animate-ping ${currentStatus.color}`}></span>
+              <span className="font-semibold">{currentStatus.text}</span>
             </div>
 
             {/* Book Fitting Button */}
             <button
               onClick={onOpenBooking}
-              className="bg-[#231942] hover:bg-[#5E548E] text-[#F5F5F5] px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow hover:scale-105 active:scale-95"
+              className="bg-[#231942] hover:bg-[#342461] text-[#F5F5F5] px-4.5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
             >
               <Calendar className="w-4 h-4 text-[#E0B1CB]" />
               <span>حجز موعد قياس</span>
@@ -129,7 +129,7 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
               href={getWhatsAppUrl('مرحباً مقاس، أرغب في الاستفسار عن تعديل قطعة')}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#E0B1CB]/40 hover:bg-[#E0B1CB]/70 text-[#231942] p-2 rounded-full transition-colors"
+              className="bg-[#E0B1CB]/40 hover:bg-[#E0B1CB]/70 text-[#231942] p-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm"
               title="تواصل مباشر عبر واتساب"
             >
               <Phone className="w-4 h-4 text-[#231942]" />
