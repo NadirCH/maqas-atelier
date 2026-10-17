@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import MaqasLogo from './MaqasLogo';
-import { Phone, RotateCw, Sparkles, QrCode, Layers } from 'lucide-react';
+import { Phone, RotateCw, Sparkles, QrCode } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
@@ -91,11 +91,6 @@ export default function BusinessCard3D() {
               />
               <span>{isFlipped ? 'معاينة الوجه الأمامي (العاجي الفاتح)' : 'معاينة الوجه الخلفي (البنفسجي المخملي)'}</span>
             </button>
-
-            <div className="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-500 font-tajawal bg-white/80 px-3.5 py-2 rounded-full border border-gray-200">
-              <Layers className="w-3.5 h-3.5 text-[#5E548E]" />
-              <span>تتبع سلس للمؤشر (Fluid Tilt Physics)</span>
-            </div>
           </div>
 
           {/* Perspective Container */}
@@ -268,12 +263,6 @@ export default function BusinessCard3D() {
             </div>
 
           </div>
-
-          {/* User Hint */}
-          <p className="text-xs text-gray-500 mt-6 font-tajawal text-center flex items-center justify-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#5E548E] animate-ping"></span>
-            <span>حركي المؤشر لمعاينة التأثير ثلاثي الأبعاد، أو انقري مباشرة على البطاقة لقلبها بنعومة.</span>
-          </p>
 
         </div>
 
