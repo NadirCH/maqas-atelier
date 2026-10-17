@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, Phone, User, Sparkles, ShieldCheck, CheckCircle2, MessageSquare } from 'lucide-react';
+import { X, Calendar, Clock, Phone, User, Sparkles, ShieldCheck, CheckCircle2, MessageSquare, AlertCircle } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
+import { sanitizeText, sanitizeNotes, validatePhone } from '../utils/sanitize';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function BookingModal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -15,24 +17,56 @@ export default function BookingModal({ isOpen, onClose }) {
     notes: ''
   });
 
+  const [validationError, setValidationError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  // Today in YYYY-MM-DD format for min date
+  const todayStr = new Date().toISOString().split('T')[0];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setValidationError('');
+
+    // Input Validation (Security Rule)
+    const sanitizedName = sanitizeText(formData.name, 80);
+    if (!sanitizedName || sanitizedName.length < 2) {
+      setValidationError('يرجى إدخال اسم صحيح مكون من حرفين على الأقل.');
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      setValidationError('يرجى إدخال رقم هاتف صحيح مكون من 8 إلى 15 رقماً.');
+      return;
+    }
+
+    setFormData({
+      ...formData,
+      name: sanitizedName,
+      phone: formData.phone.trim(),
+      notes: sanitizeNotes(formData.notes, 400)
+    });
+
     setSubmitted(true);
   };
 
-  const getWhatsAppBookingUrl = () => {
-    const text = `السلام عليكم أتيلييه مقاس، أود تأكيد حجز موعد قياس خاص:
-- الاسم: ${formData.name || 'عميلة مقاس'}
-- نوع الخدمة: ${formData.service}
-- التاريخ المفضل: ${formData.date || 'أقرب موعد متاح'}
-- الفترة: ${formData.timeSlot}
-- الاستعجال: ${formData.urgency}
-${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
+  const getWhatsAppBookingLink = () => {
+    const safeName = sanitizeText(formData.name, 80) || 'عميلة مقاس';
+    const safeService = sanitizeText(formData.service, 80);
+    const safeDate = sanitizeText(formData.date, 30) || 'أقرب موعد متاح';
+    const safeTime = sanitizeText(formData.timeSlot, 50);
+    const safeUrgency = sanitizeText(formData.urgency, 50);
+    const safeNotes = sanitizeNotes(formData.notes, 300);
+
+    const message = `السلام عليكم أتيلييه مقاس، أود تأكيد حجز موعد قياس خاص:
+- الاسم: ${safeName}
+- نوع الخدمة: ${safeService}
+- التاريخ المفضل: ${safeDate}
+- الفترة: ${safeTime}
+- الاستعجال: ${safeUrgency}
+${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
 شكراً لكم، بانتظار التأكيد.`;
 
-    return `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
+    return getWhatsAppUrl(message);
   };
 
   return (
@@ -73,6 +107,14 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
               </span>
             </div>
 
+            {/* Validation Error Banner */}
+            {validationError && (
+              <div className="bg-rose-50 border border-rose-300 text-rose-800 rounded-xl p-3 mb-4 flex items-center gap-2 text-xs">
+                <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                <span>{validationError}</span>
+              </div>
+            )}
+
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               
@@ -85,6 +127,7 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
                   <input
                     type="text"
                     required
+                    maxLength={80}
                     placeholder="مثال: سارة الأحمد"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -102,6 +145,7 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
                   <input
                     type="tel"
                     required
+                    maxLength={20}
                     placeholder="05XXXXXXXX"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -136,6 +180,7 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
                   </label>
                   <input
                     type="date"
+                    min={todayStr}
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                     className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5E548E] text-xs font-tajawal bg-white"
@@ -163,6 +208,7 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
                 </label>
                 <textarea
                   rows="2"
+                  maxLength={400}
                   placeholder="مثال: فستان كريب حريري، موعد مناسبتي بعد 5 أيام..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
@@ -194,7 +240,7 @@ ${formData.notes ? `- ملاحظات: ${formData.notes}` : ''}
             </p>
 
             <a
-              href={getWhatsAppBookingUrl()}
+              href={getWhatsAppBookingLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all mb-3"
