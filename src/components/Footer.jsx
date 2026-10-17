@@ -37,6 +37,7 @@ export default function Footer({ onOpenBooking }) {
                 <li><a href="#services" className="hover:text-white transition-colors">دليل الخدمات والأسعار</a></li>
                 <li><a href="#before-after" className="hover:text-white transition-colors">معرض الأعمال (قبل وبعد)</a></li>
                 <li><a href="#business-card" className="hover:text-white transition-colors">بطاقة التعريف</a></li>
+                <li><a href="#location" className="hover:text-white transition-colors">موقع المحل والخريطة</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">الأسئلة الشائعة</a></li>
               </ul>
             </div>

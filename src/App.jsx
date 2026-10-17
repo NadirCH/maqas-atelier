@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import ServicesCatalog from './components/ServicesCatalog';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import BusinessCard3D from './components/BusinessCard3D';
+import LocationSection from './components/LocationSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
@@ -37,7 +38,12 @@ export default function App() {
         {/* 4. Business Card 3D Showcase */}
         <BusinessCard3D />
 
-        {/* 5. Frequently Asked Questions */}
+        {/* 5. Location & Map Section */}
+        <LocationSection 
+          onOpenBooking={() => setIsBookingOpen(true)} 
+        />
+
+        {/* 6. Frequently Asked Questions */}
         <FaqSection />
       </main>
 

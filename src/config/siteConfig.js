@@ -15,6 +15,8 @@ export const siteConfig = {
   whatsappNumber: cleanWhatsAppNumber,
   instagramUrl: sanitizeUrl(import.meta.env.VITE_INSTAGRAM_URL || 'https://instagram.com', 'https://instagram.com'),
   tiktokUrl: sanitizeUrl(import.meta.env.VITE_TIKTOK_URL || 'https://tiktok.com', 'https://tiktok.com'),
+  addressText: import.meta.env.VITE_STORE_ADDRESS || 'الجزائر العاصمة • الجزائر (موقع هادئ وسهل الوصول)',
+  googleMapsUrl: sanitizeUrl(import.meta.env.VITE_MAPS_URL || 'https://maps.google.com/?q=Algiers', 'https://maps.google.com'),
 };
 
 /**

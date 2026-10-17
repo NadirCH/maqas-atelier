@@ -27,6 +27,7 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
     { name: 'الخدمات والأسعار', href: '#services' },
     { name: 'معرض الأعمال (قبل وبعد)', href: '#before-after' },
     { name: 'بطاقة التعريف', href: '#business-card' },
+    { name: 'موقع المحل', href: '#location' },
     { name: 'الأسئلة الشائعة', href: '#faq' },
   ];
 
