@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Star
 } from 'lucide-react';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function ServicesCatalog({ onOpenBooking }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -128,7 +129,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
 
   const getWhatsAppBookingUrl = (serviceName, estPrice) => {
     const text = `مرحباً أتيلييه مقاس، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
-    return `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
+    return getWhatsAppUrl(text);
   };
 
   const getCalculatorWhatsAppUrl = () => {
@@ -138,7 +139,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
 - نوع الموعد: ${urgency === 'express' ? 'مستعجل VIP (24-48 ساعة)' : 'عادي'}
 - التكلفة التقديرية: ${estimatedMin} - ${estimatedMax} ر.س.
 هل يتوفر موعد قياس في الأتيلييه؟`;
-    return `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
+    return getWhatsAppUrl(text);
   };
 
   return (

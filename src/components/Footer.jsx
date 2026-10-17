@@ -1,6 +1,7 @@
 import React from 'react';
 import MaqasLogo from './MaqasLogo';
 import { Phone, MessageSquare, ShieldCheck, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
+import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Footer({ onOpenBooking }) {
   return (
@@ -75,7 +76,7 @@ export default function Footer({ onOpenBooking }) {
               
               <div className="space-y-3">
                 <a
-                  href="https://wa.me/966500000000"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 bg-[#1a1233] hover:bg-[#251949] p-2.5 rounded-xl border border-[#5E548E] text-xs text-gray-200 transition-colors"
@@ -90,7 +91,7 @@ export default function Footer({ onOpenBooking }) {
                 </a>
 
                 <a
-                  href="https://instagram.com"
+                  href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 bg-[#1a1233] hover:bg-[#251949] p-2.5 rounded-xl border border-[#5E548E] text-xs text-gray-200 transition-colors"
@@ -135,7 +136,7 @@ export default function Footer({ onOpenBooking }) {
         </button>
 
         <a
-          href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%82%D8%A7%D8%B3%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1"
+          href={getWhatsAppUrl('مرحباً مقاس، أرغب في الاستفسار')}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 bg-[#25D366] text-white py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow"
