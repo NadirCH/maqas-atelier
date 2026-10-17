@@ -53,7 +53,7 @@ export default function Footer({ onOpenBooking }) {
               <ul className="space-y-2 text-xs text-gray-300 font-tajawal">
                 <li className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-[#E0B1CB]" />
-                  <span>السبت - الخميس:</span>
+                  <span>كل أيام الأسبوع (ما عدا الجمعة):</span>
                 </li>
                 <li className="text-white font-medium pr-5">04:30 م - 10:30 م</li>
                 <li className="flex items-center gap-1.5 mt-2">

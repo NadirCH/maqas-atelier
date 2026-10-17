@@ -25,7 +25,7 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
 
   const statusConfig = {
     open: {
-      text: 'المحل مفتوح لاستقبال المواعيد والقياسات',
+      text: 'المحل مفتوح لاستقبال المواعيد والقياسات كل أيام الأسبوع ما عدا الجمعة',
       color: 'bg-emerald-500',
       badge: 'bg-emerald-50 text-emerald-800 border-emerald-200'
     },
