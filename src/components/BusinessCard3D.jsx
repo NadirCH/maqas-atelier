@@ -13,13 +13,13 @@ export default function BusinessCard3D() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB] text-[#231942] text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#5E548E]" />
-            <span>مواصفات بطاقة العمل الرسمية • Business Card 300 DPI</span>
+            <span>مواصفات بطاقة العمل • Business Card 300 DPI</span>
           </div>
           <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-[#231942] mb-4">
-            بطاقة عمل محل الخياطة المعتمدة
+            بطاقة التعريف الخاصة بمحل الخياطة
           </h2>
           <p className="font-tajawal text-gray-600 text-base sm:text-lg leading-relaxed">
-            تصميم راقٍ يبرز الهوية والخدمات وقناة الواتساب للتواصل المباشر وحجز المواعيد.
+            تصميم راقٍ يبرز الهوية والخدمات وقناة التواصل المباشر وحجز المواعيد.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function BusinessCard3D() {
             className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-gray-100 text-[#231942] border border-gray-300 shadow-sm text-xs font-bold transition-all active:scale-95"
           >
             <RotateCw className="w-4 h-4 text-[#5E548E] animate-spin" style={{ animationDuration: '6s' }} />
-            <span>{isFlipped ? 'عرض الوجه الأمامي (الفاتح)' : 'اقلبي البطاقة لرؤية الوجه الخلفي (الداكن)'}</span>
+            <span>{isFlipped ? 'معاينة الوجه الأمامي (الفاتح)' : 'معاينة الوجه الخلفي (الداكن)'}</span>
           </button>
 
           {/* Perspective Container */}
@@ -106,8 +106,8 @@ export default function BusinessCard3D() {
                   <div className="col-span-8 text-right space-y-1 text-xs sm:text-sm text-gray-200 font-tajawal">
                     <div className="text-[#E0B1CB] font-bold text-xs mb-1">قائمة الخدمات الرئيسية:</div>
                     <div>• تعديل فساتين السهرة والأعراس</div>
-                    <div>• تضييق وتجسيم القوام بدقة مليمترية</div>
-                    <div>• تقصير حواشي مخفية وسحابات راقية</div>
+                    <div>• تضييق وتجسيم القوام بدقة متناهية</div>
+                    <div>• تقصير الحواشي المخفية وإصلاح السحابات</div>
                   </div>
 
                   {/* WhatsApp QR Simulation */}
@@ -115,7 +115,7 @@ export default function BusinessCard3D() {
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white p-1.5 rounded-xl shadow-md flex items-center justify-center">
                       <QrCode className="w-full h-full text-[#231942]" />
                     </div>
-                    <span className="text-[9px] text-[#E0B1CB] mt-1 font-tajawal">امسحي للتواصل</span>
+                    <span className="text-[9px] text-[#E0B1CB] mt-1 font-tajawal">مسح الرمز للتواصل</span>
                   </div>
                 </div>
 
@@ -137,7 +137,7 @@ export default function BusinessCard3D() {
           </div>
 
           <p className="text-xs text-gray-500 mt-6 font-tajawal text-center">
-            * اضغطي على البطاقة في أي وقت لتجربة التدوير التفاعلي والمقارنة بين الوجهين.
+            * يمكن النقر على البطاقة لمعاينتها تفاعلياً من الوجهين.
           </p>
 
         </div>

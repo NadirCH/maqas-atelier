@@ -57,12 +57,12 @@ export default function BookingModal({ isOpen, onClose }) {
     const safeUrgency = sanitizeText(formData.urgency, 50);
     const safeNotes = sanitizeNotes(formData.notes, 300);
 
-    const message = `السلام عليكم محل مقاس للخياطة، أود تأكيد حجز موعد قياس خاص:
+    const message = `السلام عليكم ورحمة الله، أود تأكيد حجز موعد قياس لدى محل مَقاس:
 - الاسم: ${safeName}
 - نوع الخدمة: ${safeService}
 - التاريخ المفضل: ${safeDate}
-- الفترة: ${safeTime}
-- الاستعجال: ${safeUrgency}
+- الفترة المفضلة: ${safeTime}
+- نوع الخدمة: ${safeUrgency}
 ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
 شكراً لكم، بانتظار التأكيد.`;
 
@@ -103,7 +103,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
             <div className="bg-[#FAF5F9] border border-[#E0B1CB] rounded-2xl p-3 mb-6 flex items-center gap-2.5 text-xs text-[#231942]">
               <ShieldCheck className="w-5 h-5 text-[#5E548E] shrink-0" />
               <span>
-                <strong>تذكير مهم:</strong> محل الخياطة مخصص للنساء فقط 100%. نضمن لكِ خصوصية تامة دون أي انتظار.
+                <strong>تنبيه:</strong> محل الخياطة مخصص للنساء حصراً 100%. نضمن لكِ خصوصية تامة دون أي انتظار.
               </span>
             </div>
 
@@ -128,7 +128,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
                     type="text"
                     required
                     maxLength={80}
-                    placeholder="مثال: سارة الأحمد"
+                    placeholder="مثال: أمينة بن علي"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full pr-10 pl-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5E548E] text-sm font-tajawal"
@@ -146,7 +146,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
                     type="tel"
                     required
                     maxLength={20}
-                    placeholder="05XXXXXXXX"
+                    placeholder="05XXXXXXXX / 06XXXXXXXX / 07XXXXXXXX"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full pr-10 pl-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5E548E] text-sm font-tajawal"
@@ -236,7 +236,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
             </h3>
 
             <p className="font-tajawal text-xs sm:text-sm text-gray-600 max-w-sm mx-auto leading-relaxed mb-6">
-              أهلاً بكِ أخت {formData.name || 'الكريمة'}. لإتمام تأكيد الموعد فورياً مع مسؤولة القياس، يُرجى النقر على الزر أدناه لإرسال التفاصيل مباشرة عبر الواتساب.
+              مرحباً بكِ {formData.name ? `سيدة ${formData.name}` : 'سيدتي الكريمة'}. لتأكيد الموعد بصورة نهائية مع خبيرة القياس، يُرجى النقر على الزر أدناه لإرسال بيانات الحجز عبر تطبيق واتساب.
             </p>
 
             <a
@@ -246,7 +246,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
               className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all mb-3"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>إرسال التفاصيل عبر واتساب الأعمال الآن</span>
+              <span>إرسال تفاصيل الحجز عبر واتساب الآن</span>
             </a>
 
             <button

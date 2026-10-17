@@ -26,7 +26,7 @@ export default function Hero({ onOpenBooking }) {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB] text-[#231942] text-xs sm:text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-[#5E548E] animate-ping"></span>
               <Sparkles className="w-4 h-4 text-[#5E548E]" />
-              <span>محل خياطة نسائي خاص • مخصص للنساء فقط</span>
+              <span>محل خياطة نسائي خاص • مخصص للنساء حصراً</span>
             </div>
 
             {/* Main Brand Title in Amiri */}
@@ -41,9 +41,9 @@ export default function Hero({ onOpenBooking }) {
               </span>
             </h1>
 
-            {/* Subtext describing Brand Overview from guidelines */}
+            {/* Subtext describing Brand Overview */}
             <p className="font-tajawal text-lg sm:text-xl text-[#231942]/80 leading-relaxed max-w-2xl mb-8">
-              في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، حولنا صغر المساحة إلى تجربة استثنائية من الراحة والخصوصية المطلقة. ابتعدي عن صخب المحلات العامة واستمتعي بجلسة قياس هادئة وتعديل راقٍ لفساتينكِ وأزيائكِ بأعلى درجات الإتقان.
+              في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، نعتني بإطلالتكِ ونمنحكِ تجربة استثنائية تجمع بين الراحة والخصوصية التامة. ابتعدي عن صخب المحلات المزدحمة، واستمتعي بجلسة قياس هادئة وتعديل رفيع المستوى لفساتينكِ وأزيائكِ بأيدي خياطة خبيرة.
             </p>
 
             {/* Primary Action Buttons */}
@@ -53,7 +53,7 @@ export default function Hero({ onOpenBooking }) {
                 className="bg-[#231942] hover:bg-[#5E548E] text-[#F5F5F5] px-7 py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Calendar className="w-5 h-5 text-[#E0B1CB]" />
-                <span>احجزي موعد قياس خاص</span>
+                <span>حجز موعد قياس خاص</span>
               </button>
 
               <a
@@ -73,7 +73,7 @@ export default function Hero({ onOpenBooking }) {
                 </div>
                 <div>
                   <div className="font-bold text-xs text-[#231942]">خصوصية تامة 100%</div>
-                  <div className="text-[11px] text-gray-500">بيئة نسائية مغلقة ومحمية 100%</div>
+                  <div className="text-[11px] text-gray-500">بيئة نسائية آمنة ومحمية بالكامل</div>
                 </div>
               </div>
 
@@ -82,8 +82,8 @@ export default function Hero({ onOpenBooking }) {
                   <Ruler className="w-5 h-5 text-[#5E548E]" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs text-[#231942]">دقة مليمترية بالحياكة</div>
-                  <div className="text-[11px] text-gray-500">فساتين سهرة وأعراس وأطقم</div>
+                  <div className="font-bold text-xs text-[#231942]">دقة متناهية في الحياكة</div>
+                  <div className="text-[11px] text-gray-500">فساتين سهرة وأعراس وأزياء راقية</div>
                 </div>
               </div>
 
@@ -92,8 +92,8 @@ export default function Hero({ onOpenBooking }) {
                   <Clock className="w-5 h-5 text-[#5E548E]" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs text-[#231942]">مواعيد بدون انتظار</div>
-                  <div className="text-[11px] text-gray-500">جلسة قياس فردية ومخصصة</div>
+                  <div className="font-bold text-xs text-[#231942]">مواعيد دقيقة دون انتظار</div>
+                  <div className="text-[11px] text-gray-500">جلسة قياس فردية مكرسة لكِ وحدكِ</div>
                 </div>
               </div>
             </div>
@@ -136,15 +136,15 @@ export default function Hero({ onOpenBooking }) {
                     </div>
                     {/* Floating mini badges */}
                     <span className="absolute -top-2 right-4 bg-[#E0B1CB] text-[#231942] text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
-                      نساء فقط
+                      للنساء فقط
                     </span>
                     <span className="absolute -bottom-2 left-4 bg-[#5E548E] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full shadow">
-                      خياطة راقية
+                      حياكة راقية
                     </span>
                   </div>
 
                   <p className="mt-5 font-amiri text-lg text-gray-200 italic">
-                    "حيث تلتقي راحة منزلكِ بدقة أيدي الخياطة المحترفة"
+                    "حيث تجتمع راحة المكان مع براعة الحياكة اليدوية"
                   </p>
                 </div>
 
@@ -158,16 +158,16 @@ export default function Hero({ onOpenBooking }) {
                     <span className="text-[#E0B1CB] text-[11px]">متاحة للاستفسار</span>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed mb-3">
-                    تصفحي كتالوج الأسعار التقديرية، وتابعي يومياً القطع الجاهزة للاستلام عبر خاصية "الحالة".
+                    تصفحي كتالوج التقديرات، وتابعي جاهزية القطع للاستلام عبر تطبيق واتساب.
                   </p>
                   <a
-                    href={getWhatsAppUrl('مرحباً مقاس، أرغب في حجز موعد قياس')}
+                    href={getWhatsAppUrl('السلام عليكم، أرغب في حجز موعد قياس لدى مَقاس')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-[#E0B1CB] hover:bg-[#d89fbe] text-[#231942] py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
-                    <span>مراسلة واتساب للأعمال الآن</span>
+                    <span>مراسلة عبر تطبيق واتساب الآن</span>
                   </a>
                 </div>
 
@@ -180,7 +180,7 @@ export default function Hero({ onOpenBooking }) {
                 </div>
                 <div>
                   <div className="font-bold">أمان تام واطمئنان</div>
-                  <div className="text-[10px] text-gray-500">محل خياطة معتمد ومحمي بالكامل</div>
+                  <div className="text-[10px] text-gray-500">محل خياطة معتمد ومصون بالكامل</div>
                 </div>
               </div>
 

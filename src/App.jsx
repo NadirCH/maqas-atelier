@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BrandStory from './components/BrandStory';
 import ServicesCatalog from './components/ServicesCatalog';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import PrivacyPillars from './components/PrivacyPillars';
@@ -29,10 +28,7 @@ export default function App() {
           onOpenBooking={() => setIsBookingOpen(true)} 
         />
 
-        {/* 2. Brand Philosophy & Visual Identity */}
-        <BrandStory />
-
-        {/* 3. Services Catalog & Interactive Cost Estimator */}
+        {/* 2. Services Catalog & Interactive Cost Estimator */}
         <ServicesCatalog 
           onOpenBooking={() => setIsBookingOpen(true)} 
         />

@@ -35,66 +35,66 @@ export default function ServicesCatalog({ onOpenBooking }) {
       category: 'evening',
       title: 'تعديل فساتين السهرة والأعراس',
       subtitle: 'Evening & Bridal Gown Alterations',
-      desc: 'تعديل دقيق للفساتين المعقدة متعددة الطبقات (تول، ساتان، دانتيل، شك يدوي) مع الحفاظ على انسيابية الموديل الأصلي.',
+      desc: 'تعديل دقيق للفساتين المعقدة متعددة الطبقات (التول، الساتان، الدانتيل، والتطريز اليدوي) مع الحفاظ على انسيابية التصميم الأصلي.',
       price: 'من 2,500 إلى 6,000 د.ج',
       time: '3 إلى 5 أيام',
       featured: true,
-      features: ['تعديل طبقات التول والبطانة يدوياً', 'حماية التطريز والخرز الحساس', 'قياس فردي وتجربة في محل الخياطة']
+      features: ['تعديل طبقات التول والبطانة بعناية يدوية', 'صيانة التطريز وحبات الخرز الدقيقة', 'جلسة قياس فردية وتجربة خاصة في المحل']
     },
     {
       id: 2,
       category: 'fitting',
       title: 'تضييق وتجسيم القوام (Contouring)',
       subtitle: 'Precision Silhouette Fitting',
-      desc: 'إعادة ضبط مقاس الخصر والوسط والأكتاف لتناسب تفاصيل قوامكِ بدقة مليمترية دون شد أو انتفاخ في القماش.',
+      desc: 'إعادة ضبط مقاسات الخصر والصدر والأكتاف لتلائم تفاصيل قوامكِ بدقة متناهية دون شد أو تشوه في النسيج.',
       price: 'من 1,200 إلى 2,800 د.ج',
       time: '2 إلى 3 أيام',
       featured: false,
-      features: ['تجسيم خصر وبنسات داخلية', 'خياطة مطابقة للغرزة الأصلية', 'إمكانية التوسيع مستقبلاً']
+      features: ['تجسيم الخصر بطيات ودرزات داخلية متقنة', 'حياكة مطابقة تماماً للغرزة الأصلية', 'إمكانية التوسيع مستقبلاً عند الحاجة']
     },
     {
       id: 3,
       category: 'hemming',
-      title: 'تقصير الحواشي المخفية (Blind Hem)',
+      title: 'تقصير الحواشي بغرزة خفية (Blind Hem)',
       subtitle: 'Invisible Length Shortening',
-      desc: 'تقصير احترافي للتنانير والفساتين والبنطلونات بغرزة مخفية بالكامل تحافظ على المظهر الفاخر للقطعة.',
+      desc: 'تقصير احترافي للتنانير والفساتين والسراويل بغرزة غير مرئية تحافظ على الهيئة الفاخرة للقطعة.',
       price: 'من 400 إلى 900 د.ج',
       time: '24 إلى 48 ساعة',
       featured: false,
-      features: ['غرزة خفية لا تظهر من الخارج', 'كي بالبخار الإيطالي المضغوط', 'ضبط الطول مع الكعب المفضل']
+      features: ['غرزة خفية لا تظهر من الخارج نهائياً', 'كي احترافي بالبخار المضغوط', 'ملاءمة الطول بدقة مع الحذاء المختار']
     },
     {
       id: 4,
       category: 'zippers',
-      title: 'استبدال وتصليح السحابات المخفية',
+      title: 'استبدال وإصلاح السحابات المخفية',
       subtitle: 'Invisible Zipper Repair & Replacement',
-      desc: 'استبدال السحابات التالفة بسحابات يابانية عالية الجودة مدمجة بإتقان فائق ضمن درزات الفستان أو العباية.',
+      desc: 'استبدال السحابات التالفة بسحابات ناعمة ومتينة مدمجة بمهارة فائقة ضمن درزات الثوب.',
       price: 'من 500 إلى 1,000 د.ج',
       time: '24 إلى 48 ساعة',
       featured: false,
-      features: ['سحابات مخفية قوية وناعمة الانزلاق', 'تطابق لوني تام مع القماش', 'تثبيت هوك داخلي للأمان']
+      features: ['سحابات مخفية متينة وسلسة الانزلاق', 'تطابق لوني تام مع لون القماش', 'تثبيت مشبك أمان داخلي']
     },
     {
       id: 5,
       category: 'fitting',
-      title: 'تعديل أكمام وأكتاف البليزرات والعبايات',
+      title: 'تعديل أكمام وأكتاف السترات والعباءات',
       subtitle: 'Shoulder & Sleeve Refinement',
-      desc: 'رفع الأكتاف وتقصير الأكمام مع الحفاظ على الأزرار وشقوق البطانة الأصلية كما صُممت من دار الأزياء.',
+      desc: 'رفع الأكتاف وتقصير الأكمام مع الحفاظ على الأزرار والفتحات والبطانة الأصلية كما صممتها دار الأزياء.',
       price: 'من 1,000 إلى 2,200 د.ج',
       time: '2 إلى 3 أيام',
       featured: false,
-      features: ['الحفاظ على تفاصيل الأساور والفتحات', 'إعادة وزن حشوة الكتف', 'تشطيب داخلي بالساتان']
+      features: ['المحافظة على تفاصيل الأساور والفتحات', 'إعادة ضبط حشوة الكتف باتزان', 'تشطيب داخلي بالساتان الناعم']
     },
     {
       id: 6,
       category: 'evening',
-      title: 'إعادة تصميم وإضافة بطانات/أكمام',
+      title: 'إعادة تصميم وإضافة بطانات وأكمام',
       subtitle: 'Restyling & Modest Lining Additions',
       desc: 'إضافة بطانات حريرية أو أكمام شيفون متناسقة مع فساتين السهرة لتوفير الراحة والاحتشام حسب رغبتكِ.',
       price: 'من 2,000 إلى 4,500 د.ج',
       time: '3 إلى 5 أيام',
       featured: true,
-      features: ['اختيار أقمشة مطابقة تماماً للموديل', 'تثبيت غير مرئي ومريح للبشرة', 'استشارة خياطة خاصة أثناء القياس']
+      features: ['انتقاء أقمشة مطابقة تماماً للموديل', 'تثبيت مريح وغير مرئي على البشرة', 'استشارة خياطة خاصة أثناء القياس']
     }
   ];
 
@@ -105,18 +105,18 @@ export default function ServicesCatalog({ onOpenBooking }) {
   // Calculator Pricing logic (in Algerian Dinars DZD - د.ج)
   const garmentRates = {
     'evening-dress': { name: 'فستان سهرة أو مناسبات', base: 2500 },
-    'abaya': { name: 'عباية راقية / كيمونو', base: 1200 },
-    'trousers': { name: 'بنطال قماش أو جينز راقٍ', base: 600 },
-    'skirt': { name: 'تنورة بليسيه أو مستقيمة', base: 700 },
-    'blazer': { name: 'بليزر أو جاكيت رسمي', base: 1500 },
+    'abaya': { name: 'عباءة راقية أو كيمونو', base: 1200 },
+    'trousers': { name: 'سروال قماشي أو جينز راقٍ', base: 600 },
+    'skirt': { name: 'تنورة مستقيمة أو ذات كسرات', base: 700 },
+    'blazer': { name: 'سترة رسمية (بليزر)', base: 1500 },
   };
 
   const serviceRates = {
     'contouring': { name: 'تضييق وتجسيم القوام بالكامل', mult: 1.3, days: 3 },
-    'hemming': { name: 'تقصير حاشية بغرزة مخفية', mult: 0.8, days: 2 },
-    'zipper': { name: 'استبدال سحاب مخفي مع تقوية', mult: 0.8, days: 2 },
-    'shoulders': { name: 'تعديل أكتاف وأكمام', mult: 1.1, days: 3 },
-    'full-revamp': { name: 'تعديل شامل (طول + خصر + بطانة)', mult: 2.0, days: 4 },
+    'hemming': { name: 'تقصير الحاشية بغرزة خفية', mult: 0.8, days: 2 },
+    'zipper': { name: 'استبدال سحاب مخفي وتدعيمه', mult: 0.8, days: 2 },
+    'shoulders': { name: 'تعديل الأكتاف والأكمام', mult: 1.1, days: 3 },
+    'full-revamp': { name: 'تعديل شامل (طول وخصر وبطانة)', mult: 2.0, days: 4 },
   };
 
   const currentGarment = garmentRates[selectedGarment];
@@ -128,17 +128,17 @@ export default function ServicesCatalog({ onOpenBooking }) {
   const estimatedDays = urgency === 'express' ? '24 - 48 ساعة (خدمة سريعة)' : `${currentService.days} إلى ${currentService.days + 1} أيام عمل`;
 
   const getWhatsAppBookingUrl = (serviceName, estPrice) => {
-    const text = `مرحباً محل مقاس للخياطة، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
+    const text = `السلام عليكم ورحمة الله، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير المبدئي: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
     return getWhatsAppUrl(text);
   };
 
   const getCalculatorWhatsAppUrl = () => {
-    const text = `مرحباً محل مقاس للخياطة، استخدمت حاسبة الأسعار وأرغب في حجز موعد لتعديل:
+    const text = `السلام عليكم ورحمة الله، استخدمت حاسبة التقدير في موقع مَقاس، وأرغب في حجز موعد قياس لتعديل:
 - نوع القطعة: ${currentGarment.name}
 - التعديل المطلوب: ${currentService.name}
-- نوع الموعد: ${urgency === 'express' ? 'مستعجل VIP (24-48 ساعة)' : 'عادي'}
+- نوع الخدمة: ${urgency === 'express' ? 'خدمة سريعة مستعجلة (24-48 ساعة)' : 'خدمة عادية'}
 - التكلفة التقديرية: ${estimatedMin.toLocaleString()} - ${estimatedMax.toLocaleString()} د.ج
-هل يتوفر موعد قياس في محل الخياطة؟`;
+هل يمكن تحديد موعد مناسب في محل الخياطة؟`;
     return getWhatsAppUrl(text);
   };
 
@@ -150,13 +150,13 @@ export default function ServicesCatalog({ onOpenBooking }) {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB] text-[#231942] text-xs font-semibold mb-3">
             <Scissors className="w-3.5 h-3.5 text-[#5E548E]" />
-            <span>كتالوج الخدمات الثابت والأسعار التقديرية</span>
+            <span>دليل الخدمات والأسعار التقديرية</span>
           </div>
           <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-[#231942] mb-4">
-            حرفية خياطة رفيعة تمنح قطعكِ رونقها المثالي
+            حرفية حياكة رفيعة تمنح أزياءكِ رونقاً مثالياً
           </h2>
           <p className="font-tajawal text-gray-600 text-base sm:text-lg leading-relaxed">
-            نعتمد معايير شفافة ومحددة للأسعار والمواعيد عبر كتالوج واتساب للأعمال، لنضمن لكِ أعلى مستويات الدقة والالتزام التام.
+            نعتمد معايير شفافة ومحددة للأسعار والمواعيد عبر واتساب للأعمال، لنضمن لكِ أعلى مستويات الدقة والالتزام التام.
           </p>
         </div>
 
@@ -272,13 +272,13 @@ export default function ServicesCatalog({ onOpenBooking }) {
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E0B1CB]/20 text-[#E0B1CB] text-xs font-semibold mb-4">
                 <Calculator className="w-4 h-4" />
-                <span>حاسبة التكلفة والموعد الفورية</span>
+                <span>حاسبة التقدير المالي والزمني</span>
               </div>
               <h3 className="font-amiri text-2xl sm:text-4xl font-bold text-[#F5F5F5] mb-3">
-                احسبي تكلفة تعديل قطعتكِ قبل الزيارة
+                تقدير تكلفة تعديل أزيائكِ قبل الزيارة
               </h3>
               <p className="font-tajawal text-gray-300 text-sm leading-relaxed mb-6">
-                حددي نوع القطعة والتعديل المطلوب للحصول على تقدير فوري شفاف، وإرسال تفاصيل طلبكِ مباشرة لكتالوج الواتساب دون أي مفاجآت.
+                حددي نوع القطعة والتعديل المطلوب للحصول على تقدير فوري، وإرسال تفاصيل طلبكِ مباشرة عبر واتساب بكل وضوح.
               </p>
 
               <div className="space-y-4">
@@ -307,7 +307,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                 {/* Select Service */}
                 <div>
                   <label className="block text-xs font-semibold text-[#E0B1CB] mb-1.5">
-                    2. ما هو نوع التعديل الرئيسي؟
+                    2. ما هو نوع التعديل المطلوب؟
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {Object.entries(serviceRates).map(([key, val]) => (
@@ -341,7 +341,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                           : 'bg-[#2b1f4f] text-gray-300 border-[#5E548E]/40'
                       }`}
                     >
-                      موعد قياسي (3-4 أيام)
+                      خدمة عادية (3 - 4 أيام)
                     </button>
                     <button
                       onClick={() => setUrgency('express')}
@@ -351,7 +351,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                           : 'bg-[#2b1f4f] text-gray-300 border-[#5E548E]/40'
                       }`}
                     >
-                      ⚡ مستعجل VIP (24-48 ساعة)
+                      خدمة سريعة مستعجلة (24 - 48 ساعة)
                     </button>
                   </div>
                 </div>
@@ -387,7 +387,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                     {estimatedMin.toLocaleString()} - {estimatedMax.toLocaleString()} <span className="text-lg font-tajawal text-white">د.ج</span>
                   </div>
                   <span className="text-[11px] text-gray-400 mt-1 block">
-                    * يتم تأكيد السعر النهائي بدقة عند فحص القطعة بجلسة القياس
+                    * يتم تأكيد السعر النهائي بدقة عند معاينة القطعة خلال جلسة القياس
                   </span>
                 </div>
               </div>
@@ -400,12 +400,12 @@ export default function ServicesCatalog({ onOpenBooking }) {
                   className="w-full bg-[#E0B1CB] hover:bg-[#d69bbe] text-[#231942] py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>إرسال هذا التقدير وحجز موعد عبر واتساب</span>
+                  <span>إرسال هذا التقدير وتأكيد الموعد عبر واتساب</span>
                 </a>
 
                 <div className="flex items-center justify-center gap-2 text-[11px] text-gray-400 mt-3">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>خصوصية تامة واستجابة سريعة خلال دقائق العمل</span>
+                  <span>خصوصية تامة واستجابة سريعة خلال أوقات العمل</span>
                 </div>
               </div>
 

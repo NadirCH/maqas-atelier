@@ -37,11 +37,10 @@ export default function Footer({ onOpenBooking }) {
                 أقسام الموقع
               </h4>
               <ul className="space-y-2 text-xs text-gray-300 font-tajawal">
-                <li><a href="#philosophy" className="hover:text-white transition-colors">فلسفة البراند والشعار</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">كتالوج الخدمات والأسعار</a></li>
-                <li><a href="#before-after" className="hover:text-white transition-colors">معرض قبل وبعد</a></li>
-                <li><a href="#privacy" className="hover:text-white transition-colors">دستور الخصوصية والأمان</a></li>
-                <li><a href="#business-card" className="hover:text-white transition-colors">بطاقة العمل 300 DPI</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">دليل الخدمات والأسعار</a></li>
+                <li><a href="#before-after" className="hover:text-white transition-colors">معرض الأعمال (قبل وبعد)</a></li>
+                <li><a href="#privacy" className="hover:text-white transition-colors">ميثاق الخصوصية والأمان</a></li>
+                <li><a href="#business-card" className="hover:text-white transition-colors">بطاقة التعريف</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">الأسئلة الشائعة</a></li>
               </ul>
             </div>
@@ -63,12 +62,12 @@ export default function Footer({ onOpenBooking }) {
                 </li>
                 <li className="text-gray-400 pr-5">مخصص للطلبات المستعجلة</li>
                 <li className="text-[11px] text-[#E0B1CB] mt-2">
-                  * يُفضل دائماً حجز الموعد مسبقاً
+                  * يُستحسن دوماً حجز الموعد مسبقاً
                 </li>
               </ul>
             </div>
 
-            {/* Social & Contact Channels (Page 4 Strategy) */}
+            {/* Social & Contact Channels */}
             <div className="lg:col-span-3 text-right">
               <h4 className="font-amiri text-lg font-bold text-[#E0B1CB] mb-4">
                 القنوات الرقمية والتواصل
@@ -85,8 +84,8 @@ export default function Footer({ onOpenBooking }) {
                     <MessageSquare className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="font-bold text-white">واتساب للأعمال (القناة الأساسية)</div>
-                    <div className="text-[10px] text-gray-400">الكتالوج والحالة اليومية للقطع</div>
+                    <div className="font-bold text-white">واتساب للأعمال (القناة المعتمدة)</div>
+                    <div className="text-[10px] text-gray-400">الاستفسار ومتابعة جاهزية القطع</div>
                   </div>
                 </a>
 
@@ -103,7 +102,7 @@ export default function Footer({ onOpenBooking }) {
                   </div>
                   <div>
                     <div className="font-bold text-white">إنستغرام وتيك توك</div>
-                    <div className="text-[10px] text-gray-400">فيديوهات الحياكة على طاولة العمل</div>
+                    <div className="text-[10px] text-gray-400">مقاطع الحياكة المتقنة على طاولة العمل</div>
                   </div>
                 </a>
               </div>

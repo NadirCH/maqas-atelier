@@ -16,27 +16,26 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
   }, []);
 
   const navLinks = [
-    { name: 'فلسفة البراند', href: '#philosophy' },
     { name: 'الخدمات والأسعار', href: '#services' },
-    { name: 'قبل وبعد', href: '#before-after' },
-    { name: 'أمان وخصوصية', href: '#privacy' },
-    { name: 'بطاقة العمل', href: '#business-card' },
+    { name: 'معرض الأعمال (قبل وبعد)', href: '#before-after' },
+    { name: 'الخصوصية والأمان', href: '#privacy' },
+    { name: 'بطاقة التعريف', href: '#business-card' },
     { name: 'الأسئلة الشائعة', href: '#faq' },
   ];
 
   const statusConfig = {
     open: {
-      text: 'المحل مفتوح لاستقبال القياسات',
+      text: 'المحل مفتوح لاستقبال المواعيد والقياسات',
       color: 'bg-emerald-500',
       badge: 'bg-emerald-50 text-emerald-800 border-emerald-200'
     },
     returnSoon: {
-      text: 'سنعود بعد قليل (استراحة قياس)',
+      text: 'سنعود قريباً (فترة استراحة)',
       color: 'bg-amber-500',
       badge: 'bg-amber-50 text-amber-800 border-amber-200'
     },
     closed: {
-      text: 'مغلق حالياً • الحجز متاح واتساب',
+      text: 'المحل مغلق حالياً • الحجز متاح عبر واتساب',
       color: 'bg-rose-500',
       badge: 'bg-rose-50 text-rose-800 border-rose-200'
     }
