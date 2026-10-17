@@ -1,43 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MaqasLogo from './MaqasLogo';
-import { Eye, Shield, Sparkles, Scissors, Layers, CheckCircle2, Copy, Check } from 'lucide-react';
+import { Shield, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function BrandStory() {
-  const [activeTab, setActiveTab] = useState('philosophy');
-  const [copiedHex, setCopiedHex] = useState(null);
-
-  const colors = [
-    {
-      name: 'أبيض دخاني ناعم (Off-White)',
-      hex: '#F5F5F5',
-      use: 'الخلفيات الأساسية وبطن البطاقات والبانرات',
-      border: 'border-gray-300'
-    },
-    {
-      name: 'وردي لافندر (Mauve)',
-      hex: '#E0B1CB',
-      use: 'اللمسات الأنثوية، الشارات البارزة، والخلفيات الناعمة',
-      border: 'border-[#d09ab7]'
-    },
-    {
-      name: 'بنفسجي متوسط (Medium Purple)',
-      hex: '#5E548E',
-      use: 'الإطارات الفاصلة، العناوين الفرعية، وإبرة الخياطة',
-      border: 'border-[#4e4577]'
-    },
-    {
-      name: 'بنفسجي ليلي عميق (Deep Violet)',
-      hex: '#231942',
-      use: 'النصوص الرئيسية، اسم البراند، وخلفية البطاقات',
-      border: 'border-[#1b1333]'
-    }
-  ];
-
-  const handleCopy = (hex) => {
-    navigator.clipboard.writeText(hex);
-    setCopiedHex(hex);
-    setTimeout(() => setCopiedHex(null), 2000);
-  };
 
   return (
     <section id="philosophy" className="py-20 md:py-28 bg-white relative overflow-hidden">
@@ -158,91 +123,6 @@ export default function BrandStory() {
 
             <div className="mt-6 pt-4 border-t border-[#5E548E]/60 text-center">
               <span className="text-xs text-[#E0B1CB]">خطوط ناعمة ومبسطة تعبر عن الرقي والهدوء</span>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Color Palette & Typography Showcase from Guidelines */}
-        <div className="bg-[#F5F5F5] rounded-3xl p-6 sm:p-10 border border-gray-200">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-gray-200 gap-4">
-            <div>
-              <h3 className="font-amiri text-2xl sm:text-3xl font-bold text-[#231942]">
-                لوحة الألوان المعتمدة (Brand Color Palette)
-              </h3>
-              <p className="font-tajawal text-sm text-gray-600 mt-1">
-                تدرج لمسات الباستيل الهادئة مع التباين الداكن للوضوح والأناقة الاحترافية
-              </p>
-            </div>
-            <div className="text-xs text-gray-500 font-mono">
-              اضغطي على أي لون لنسخ كود الـ Hex
-            </div>
-          </div>
-
-          {/* Color Swatches Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {colors.map((color) => (
-              <div 
-                key={color.hex}
-                onClick={() => handleCopy(color.hex)}
-                className={`bg-white rounded-2xl p-4 border ${color.border} shadow-sm hover:shadow-md transition-all cursor-pointer group relative`}
-              >
-                {/* Color Swatch Block */}
-                <div 
-                  className="h-28 rounded-xl w-full mb-3 shadow-inner flex items-center justify-center transition-transform group-hover:scale-[1.02] relative"
-                  style={{ backgroundColor: color.hex }}
-                >
-                  <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md shadow-sm flex items-center gap-1 ${
-                    color.hex === '#F5F5F5' || color.hex === '#E0B1CB' 
-                      ? 'bg-black/80 text-white' 
-                      : 'bg-white/90 text-[#231942]'
-                  }`}>
-                    {copiedHex === color.hex ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        تم النسخ!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5 opacity-60" />
-                        {color.hex}
-                      </>
-                    )}
-                  </span>
-                </div>
-
-                <div className="text-right">
-                  <div className="font-bold text-sm text-[#231942] mb-1">
-                    {color.name}
-                  </div>
-                  <p className="text-xs text-gray-600 font-tajawal leading-relaxed">
-                    {color.use}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Typography Specs Summary */}
-          <div className="mt-10 pt-8 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-5 rounded-2xl border border-gray-200">
-              <span className="text-xs font-bold text-[#5E548E] block mb-1">خط العناوين الرسمية والرئيسية:</span>
-              <div className="font-amiri text-2xl text-[#231942] font-bold">
-                Amiri / Traditional Arabic
-              </div>
-              <p className="text-xs text-gray-500 mt-2 font-tajawal">
-                مخصص للعناوين الكبرى (76-88pt) والشعارات واسم البراند لإضفاء طابع عربي أصيل وفخم.
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-2xl border border-gray-200">
-              <span className="text-xs font-bold text-[#5E548E] block mb-1">خط النصوص والوصف والتفاصيل:</span>
-              <div className="font-tajawal text-xl text-[#231942] font-bold">
-                Tajawal / Cairo
-              </div>
-              <p className="text-xs text-gray-500 mt-2 font-tajawal">
-                مخصص للنصوص التوضيحية، أرقام الهاتف، وقوائم الخدمات لسهولة القراءة والوضوح العصري.
-              </p>
             </div>
           </div>
 
