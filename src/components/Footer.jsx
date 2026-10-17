@@ -2,6 +2,7 @@ import React from 'react';
 import MaqasLogo from './MaqasLogo';
 import { Phone, ShieldCheck, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import TikTokIcon from './TikTokIcon';
 import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Footer({ onOpenBooking }) {
@@ -101,8 +102,23 @@ export default function Footer({ onOpenBooking }) {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold text-white">إنستغرام وتيك توك</div>
-                    <div className="text-[10px] text-gray-400">مقاطع الحياكة المتقنة على طاولة العمل</div>
+                    <div className="font-bold text-white">إنستغرام (معرض الأعمال)</div>
+                    <div className="text-[10px] text-gray-400">صور وتفاصيل القطع المنتهية</div>
+                  </div>
+                </a>
+
+                <a
+                  href={siteConfig.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 bg-[#1a1233] hover:bg-[#251949] p-2.5 rounded-xl border border-[#5E548E] text-xs text-gray-200 transition-colors"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-black text-white flex items-center justify-center shrink-0 border border-white/10 shadow-inner">
+                    <TikTokIcon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">تيك توك (TikTok للأعمال)</div>
+                    <div className="text-[10px] text-gray-400">مقاطع الحياكة والتشطيب على طاولة العمل</div>
                   </div>
                 </a>
               </div>
