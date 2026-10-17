@@ -1,6 +1,6 @@
 import React from 'react';
 import MaqasLogo from './MaqasLogo';
-import { Phone, ShieldCheck, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
+import { Phone, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import TikTokIcon from './TikTokIcon';
 import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
@@ -23,14 +23,9 @@ export default function Footer({ onOpenBooking }) {
                 </div>
               </div>
 
-              <p className="font-tajawal text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md mb-6">
+              <p className="font-tajawal text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md">
                 محل خياطة نسائي خاص يعيد تعريف تجربة تعديل الملابس الراقية. نوفر لكِ الخصوصية المطلقة والراحة التامة أثناء القياس بأعلى درجات الاطمئنان.
               </p>
-
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1333] border border-[#5E548E] text-[11px] text-[#E0B1CB]">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>خصوصية تامة وجودة حياكة احترافية</span>
-              </div>
             </div>
 
             {/* Quick Links */}

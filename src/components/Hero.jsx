@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Sparkles, Scissors } from 'lucide-react';
+import { Calendar, Scissors } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
 import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
@@ -29,13 +29,6 @@ export default function Hero({ onOpenBooking }) {
           
           {/* Main Hero Content (Arabic Text) */}
           <div className="lg:col-span-7 text-right">
-            
-            {/* Exclusive Atelier Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB]/60 text-[#231942] text-xs sm:text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#5E548E] animate-ping"></span>
-              <Sparkles className="w-4 h-4 text-[#5E548E]" />
-              <span>محل خياطة نسائي خاص • مخصص للنساء حصراً</span>
-            </div>
 
             {/* Main Brand Title in Amiri */}
             <h1 className="font-amiri text-4xl sm:text-6xl lg:text-7xl font-bold text-[#231942] leading-[1.18] tracking-tight mb-6">
