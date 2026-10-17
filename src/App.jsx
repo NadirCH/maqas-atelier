@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesCatalog from './components/ServicesCatalog';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
-import PrivacyPillars from './components/PrivacyPillars';
 import BusinessCard3D from './components/BusinessCard3D';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
@@ -32,16 +31,13 @@ export default function App() {
           onOpenBooking={() => setIsBookingOpen(true)} 
         />
 
-        {/* 4. Interactive Before & After Tailoring Showcase */}
+        {/* 3. Interactive Before & After Tailoring Showcase */}
         <BeforeAfterSlider />
 
-        {/* 5. Privacy Manifesto & Women-Only Pillars */}
-        <PrivacyPillars />
-
-        {/* 6. Business Card 3D Showcase */}
+        {/* 4. Business Card 3D Showcase */}
         <BusinessCard3D />
 
-        {/* 7. Frequently Asked Questions */}
+        {/* 5. Frequently Asked Questions */}
         <FaqSection />
       </main>
 

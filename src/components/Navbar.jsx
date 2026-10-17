@@ -18,7 +18,6 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
   const navLinks = [
     { name: 'الخدمات والأسعار', href: '#services' },
     { name: 'معرض الأعمال (قبل وبعد)', href: '#before-after' },
-    { name: 'الخصوصية والأمان', href: '#privacy' },
     { name: 'بطاقة التعريف', href: '#business-card' },
     { name: 'الأسئلة الشائعة', href: '#faq' },
   ];
