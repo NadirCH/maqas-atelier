@@ -36,7 +36,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'تعديل فساتين السهرة والأعراس',
       subtitle: 'Evening & Bridal Gown Alterations',
       desc: 'تعديل دقيق للفساتين المعقدة متعددة الطبقات (تول، ساتان، دانتيل، شك يدوي) مع الحفاظ على انسيابية الموديل الأصلي.',
-      price: 'من 120 إلى 280 ر.س',
+      price: 'من 2,500 إلى 6,000 د.ج',
       time: '3 إلى 5 أيام',
       featured: true,
       features: ['تعديل طبقات التول والبطانة يدوياً', 'حماية التطريز والخرز الحساس', 'قياس فردي وتجربة في محل الخياطة']
@@ -47,7 +47,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'تضييق وتجسيم القوام (Contouring)',
       subtitle: 'Precision Silhouette Fitting',
       desc: 'إعادة ضبط مقاس الخصر والوسط والأكتاف لتناسب تفاصيل قوامكِ بدقة مليمترية دون شد أو انتفاخ في القماش.',
-      price: 'من 50 إلى 110 ر.س',
+      price: 'من 1,200 إلى 2,800 د.ج',
       time: '2 إلى 3 أيام',
       featured: false,
       features: ['تجسيم خصر وبنسات داخلية', 'خياطة مطابقة للغرزة الأصلية', 'إمكانية التوسيع مستقبلاً']
@@ -58,7 +58,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'تقصير الحواشي المخفية (Blind Hem)',
       subtitle: 'Invisible Length Shortening',
       desc: 'تقصير احترافي للتنانير والفساتين والبنطلونات بغرزة مخفية بالكامل تحافظ على المظهر الفاخر للقطعة.',
-      price: 'من 35 إلى 75 ر.س',
+      price: 'من 400 إلى 900 د.ج',
       time: '24 إلى 48 ساعة',
       featured: false,
       features: ['غرزة خفية لا تظهر من الخارج', 'كي بالبخار الإيطالي المضغوط', 'ضبط الطول مع الكعب المفضل']
@@ -69,7 +69,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'استبدال وتصليح السحابات المخفية',
       subtitle: 'Invisible Zipper Repair & Replacement',
       desc: 'استبدال السحابات التالفة بسحابات يابانية عالية الجودة مدمجة بإتقان فائق ضمن درزات الفستان أو العباية.',
-      price: 'من 40 إلى 85 ر.س',
+      price: 'من 500 إلى 1,000 د.ج',
       time: '24 إلى 48 ساعة',
       featured: false,
       features: ['سحابات مخفية قوية وناعمة الانزلاق', 'تطابق لوني تام مع القماش', 'تثبيت هوك داخلي للأمان']
@@ -80,7 +80,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'تعديل أكمام وأكتاف البليزرات والعبايات',
       subtitle: 'Shoulder & Sleeve Refinement',
       desc: 'رفع الأكتاف وتقصير الأكمام مع الحفاظ على الأزرار وشقوق البطانة الأصلية كما صُممت من دار الأزياء.',
-      price: 'من 60 إلى 120 ر.س',
+      price: 'من 1,000 إلى 2,200 د.ج',
       time: '2 إلى 3 أيام',
       featured: false,
       features: ['الحفاظ على تفاصيل الأساور والفتحات', 'إعادة وزن حشوة الكتف', 'تشطيب داخلي بالساتان']
@@ -91,7 +91,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       title: 'إعادة تصميم وإضافة بطانات/أكمام',
       subtitle: 'Restyling & Modest Lining Additions',
       desc: 'إضافة بطانات حريرية أو أكمام شيفون متناسقة مع فساتين السهرة لتوفير الراحة والاحتشام حسب رغبتكِ.',
-      price: 'من 90 إلى 200 ر.س',
+      price: 'من 2,000 إلى 4,500 د.ج',
       time: '3 إلى 5 أيام',
       featured: true,
       features: ['اختيار أقمشة مطابقة تماماً للموديل', 'تثبيت غير مرئي ومريح للبشرة', 'استشارة خياطة خاصة أثناء القياس']
@@ -102,19 +102,19 @@ export default function ServicesCatalog({ onOpenBooking }) {
     ? catalog 
     : catalog.filter(item => item.category === activeCategory);
 
-  // Calculator Pricing logic
+  // Calculator Pricing logic (in Algerian Dinars DZD - د.ج)
   const garmentRates = {
-    'evening-dress': { name: 'فستان سهرة أو مناسبات', base: 90 },
-    'abaya': { name: 'عباية راقية / كيمونو', base: 50 },
-    'trousers': { name: 'بنطال قماش أو جينز راقٍ', base: 40 },
-    'skirt': { name: 'تنورة بليسيه أو مستقيمة', base: 45 },
-    'blazer': { name: 'بليزر أو جاكيت رسمي', base: 70 },
+    'evening-dress': { name: 'فستان سهرة أو مناسبات', base: 2500 },
+    'abaya': { name: 'عباية راقية / كيمونو', base: 1200 },
+    'trousers': { name: 'بنطال قماش أو جينز راقٍ', base: 600 },
+    'skirt': { name: 'تنورة بليسيه أو مستقيمة', base: 700 },
+    'blazer': { name: 'بليزر أو جاكيت رسمي', base: 1500 },
   };
 
   const serviceRates = {
     'contouring': { name: 'تضييق وتجسيم القوام بالكامل', mult: 1.3, days: 3 },
     'hemming': { name: 'تقصير حاشية بغرزة مخفية', mult: 0.8, days: 2 },
-    'zipper': { name: 'استبدال سحاب مخفي مع تقوية', mult: 0.9, days: 2 },
+    'zipper': { name: 'استبدال سحاب مخفي مع تقوية', mult: 0.8, days: 2 },
     'shoulders': { name: 'تعديل أكتاف وأكمام', mult: 1.1, days: 3 },
     'full-revamp': { name: 'تعديل شامل (طول + خصر + بطانة)', mult: 2.0, days: 4 },
   };
@@ -122,9 +122,9 @@ export default function ServicesCatalog({ onOpenBooking }) {
   const currentGarment = garmentRates[selectedGarment];
   const currentService = serviceRates[selectedService];
   const baseCost = Math.round(currentGarment.base * currentService.mult);
-  const urgencyMultiplier = urgency === 'express' ? 1.4 : 1.0;
+  const urgencyMultiplier = urgency === 'express' ? 1.3 : 1.0;
   const estimatedMin = Math.round(baseCost * urgencyMultiplier);
-  const estimatedMax = Math.round((baseCost + 35) * urgencyMultiplier);
+  const estimatedMax = Math.round((baseCost + 500) * urgencyMultiplier);
   const estimatedDays = urgency === 'express' ? '24 - 48 ساعة (خدمة سريعة)' : `${currentService.days} إلى ${currentService.days + 1} أيام عمل`;
 
   const getWhatsAppBookingUrl = (serviceName, estPrice) => {
@@ -137,7 +137,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
 - نوع القطعة: ${currentGarment.name}
 - التعديل المطلوب: ${currentService.name}
 - نوع الموعد: ${urgency === 'express' ? 'مستعجل VIP (24-48 ساعة)' : 'عادي'}
-- التكلفة التقديرية: ${estimatedMin} - ${estimatedMax} ر.س.
+- التكلفة التقديرية: ${estimatedMin.toLocaleString()} - ${estimatedMax.toLocaleString()} د.ج
 هل يتوفر موعد قياس في محل الخياطة؟`;
     return getWhatsAppUrl(text);
   };
@@ -384,7 +384,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                 <div className="bg-[#231942] rounded-xl p-4 border border-[#5E548E] text-center mb-6">
                   <span className="text-xs text-gray-300 block mb-1">التكلفة التقديرية المتوقعة:</span>
                   <div className="font-amiri text-3xl sm:text-4xl font-bold text-[#E0B1CB]">
-                    {estimatedMin} - {estimatedMax} <span className="text-lg font-tajawal text-white">ر.س</span>
+                    {estimatedMin.toLocaleString()} - {estimatedMax.toLocaleString()} <span className="text-lg font-tajawal text-white">د.ج</span>
                   </div>
                   <span className="text-[11px] text-gray-400 mt-1 block">
                     * يتم تأكيد السعر النهائي بدقة عند فحص القطعة بجلسة القياس

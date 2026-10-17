@@ -10,6 +10,8 @@ const cleanWhatsAppNumber = String(rawWhatsApp).replace(/[^0-9]/g, '') || '96650
 
 export const siteConfig = {
   brandName: 'مَقاس | MAQAS',
+  currency: 'د.ج',
+  currencyName: 'دينار جزائري',
   whatsappNumber: cleanWhatsAppNumber,
   instagramUrl: sanitizeUrl(import.meta.env.VITE_INSTAGRAM_URL || 'https://instagram.com', 'https://instagram.com'),
   tiktokUrl: sanitizeUrl(import.meta.env.VITE_TIKTOK_URL || 'https://tiktok.com', 'https://tiktok.com'),
