@@ -22,12 +22,12 @@ export default function Footer({ onOpenBooking }) {
               </div>
 
               <p className="font-tajawal text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md mb-6">
-                محل خياطة نسائي خاص يعيد تعريف تجربة تعديل الملابس الراقية. نوفر لكِ الخصوصية المطلقة والراحة التامة أثناء القياس، وكأنكِ في غرفتكِ الخاصة.
+                محل خياطة نسائي خاص يعيد تعريف تجربة تعديل الملابس الراقية. نوفر لكِ الخصوصية المطلقة والراحة التامة أثناء القياس بأعلى درجات الاطمئنان.
               </p>
 
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1333] border border-[#5E548E] text-[11px] text-[#E0B1CB]">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>إصدار الدليل: النسخة الاحترافية المعتمدة • 2026</span>
+                <span>خصوصية تامة وجودة حياكة احترافية</span>
               </div>
             </div>
 

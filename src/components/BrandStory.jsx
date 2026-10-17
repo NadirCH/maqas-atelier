@@ -49,7 +49,7 @@ export default function BrandStory() {
               </p>
 
               <blockquote className="border-r-4 border-[#5E548E] pr-4 py-2 my-6 bg-white/70 rounded-l-xl text-[#231942] font-amiri text-xl italic leading-relaxed">
-                "تدخل السيدة إلى مَقاس، فتنسى صخب الأسواق ومحلات الخياطة العامة، لتشعر وكأنها في غرفتها الخاصة، مع اهتمام كامل بكل ثنية وسنتيمتر في إطلالتها."
+                "تدخل السيدة إلى مَقاس، فتنسى صخب الأسواق ومحلات الخياطة العامة، لتشعر بأعلى درجات الراحة والاطمئنان، مع اهتمام كامل بكل ثنية وسنتيمتر في إطلالتها."
               </blockquote>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
@@ -72,8 +72,7 @@ export default function BrandStory() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-[#E0B1CB]/40 flex items-center justify-between text-xs text-[#5E548E]">
-              <span>دليل الهوية البصرية • الإصدار المعتمد 2026</span>
+            <div className="mt-8 pt-6 border-t border-[#E0B1CB]/40 flex items-center justify-end text-xs text-[#5E548E]">
               <span className="font-bold">MAQAS Haute Couture & Tailoring</span>
             </div>
           </div>
@@ -85,7 +84,7 @@ export default function BrandStory() {
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#E0B1CB]/20 text-[#E0B1CB] border border-[#E0B1CB]/30">
                   فلسفة اللوغو الرسمي
                 </span>
-                <span className="text-xs text-gray-400">Minimalist Line Art</span>
+                <span className="text-xs text-gray-400">شعار مَقاس الرسمي</span>
               </div>
 
               <div className="flex justify-center my-6">

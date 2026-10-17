@@ -34,7 +34,7 @@ export default function Hero({ onOpenBooking }) {
               قياسكِ وتعديلاتكِ..
               <br />
               <span className="text-[#5E548E] relative inline-block">
-                وكأنكِ في غرفتكِ الخاصة
+                بأعلى درجات الخصوصية والإتقان
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#E0B1CB]" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none">
                   <path d="M1 5.5C50 1.5 150 1.5 199 5.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
                 </svg>
@@ -73,7 +73,7 @@ export default function Hero({ onOpenBooking }) {
                 </div>
                 <div>
                   <div className="font-bold text-xs text-[#231942]">خصوصية تامة 100%</div>
-                  <div className="text-[11px] text-gray-500">للنساء فقط دون أي تصوير</div>
+                  <div className="text-[11px] text-gray-500">بيئة نسائية مغلقة ومحمية 100%</div>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ export default function Hero({ onOpenBooking }) {
                     <MaqasLogo className="w-14 h-14" variant="dark" />
                     <div>
                       <div className="font-amiri text-2xl font-bold tracking-wide text-[#F5F5F5]">مَقاس | MAQAS</div>
-                      <div className="text-xs text-[#E0B1CB] font-tajawal">هوية الخياطة النسائية المعتمدة 2026</div>
+                      <div className="text-xs text-[#E0B1CB] font-tajawal">للخياطة النسائية وتعديل الملابس</div>
                     </div>
                   </div>
                   <div className="px-2.5 py-1 rounded-full bg-[#E0B1CB]/15 border border-[#E0B1CB]/30 text-[#E0B1CB] text-[11px] font-medium">

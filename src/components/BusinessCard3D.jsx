@@ -19,7 +19,7 @@ export default function BusinessCard3D() {
             بطاقة عمل محل الخياطة المعتمدة
           </h2>
           <p className="font-tajawal text-gray-600 text-base sm:text-lg leading-relaxed">
-            وفقاً لدليل الهوية (صفحة 3): مقاس 9.4 × 5.4 سم بدقة 300 DPI. وجه أمامي فاتح يحمل اللوغو، ووجه خلفي داكن بدرجة #231942 يبرز الخدمات وقناة الواتساب.
+            تصميم راقٍ يبرز الهوية والخدمات وقناة الواتساب للتواصل المباشر وحجز المواعيد.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function BusinessCard3D() {
                 {/* Bottom Bar */}
                 <div className="flex items-center justify-between border-t border-gray-200/80 pt-3 text-[11px] text-gray-600 font-tajawal">
                   <span>محل خياطة نسائي خاص</span>
-                  <span className="text-[#5E548E] font-medium">النسخة الاحترافية 2026</span>
+                  <span className="text-[#5E548E] font-medium">MAQAS Haute Tailoring</span>
                 </div>
               </div>
 

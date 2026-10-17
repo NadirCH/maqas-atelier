@@ -80,7 +80,7 @@ export default function MaqasLogo({
             <ellipse cx="50" cy="21" rx="0.8" ry="2.2" fill={isDarkBg ? "#231942" : "#FFFFFF"} />
           </g>
 
-          {/* Delicate Couture Thread Loop (Minimalist Line Art) */}
+          {/* Delicate Couture Thread Loop */}
           <path 
             d="M46 23 C32 25, 30 42, 44 46 C58 50, 64 58, 52 66 C43 72, 36 65, 34 58" 
             stroke={threadColor} 
