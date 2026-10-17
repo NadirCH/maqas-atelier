@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import MaqasLogo from './MaqasLogo';
-import { Phone, MessageSquare, RotateCw, Sparkles, QrCode, Layers } from 'lucide-react';
+import { Phone, RotateCw, Sparkles, QrCode, Layers } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function BusinessCard3D() {
@@ -256,7 +257,7 @@ export default function BusinessCard3D() {
                       onClick={(e) => e.stopPropagation()}
                       className="flex items-center gap-1.5 text-[11px] text-white bg-[#5E548E] hover:bg-[#6c619e] px-2.5 py-1 rounded-lg transition-colors shadow-sm"
                     >
-                      <MessageSquare className="w-3 h-3 text-[#E0B1CB]" />
+                      <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                       <span>مراسلة واتساب</span>
                     </a>
                   </div>

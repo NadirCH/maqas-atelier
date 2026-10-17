@@ -1,6 +1,7 @@
 import React from 'react';
-import { Calendar, MessageSquare, Sparkles, Scissors } from 'lucide-react';
+import { Calendar, Sparkles, Scissors } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Hero({ onOpenBooking }) {
@@ -128,7 +129,7 @@ export default function Hero({ onOpenBooking }) {
                 >
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-xl bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] shrink-0">
-                      <MessageSquare className="w-4 h-4" />
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                     </div>
                     <div className="text-right">
                       <div className="font-bold text-white text-xs flex items-center gap-1.5">

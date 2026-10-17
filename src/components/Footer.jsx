@@ -1,6 +1,7 @@
 import React from 'react';
 import MaqasLogo from './MaqasLogo';
-import { Phone, MessageSquare, ShieldCheck, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
+import { Phone, ShieldCheck, Heart, Clock, MapPin, Sparkles, Video } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Footer({ onOpenBooking }) {
@@ -80,7 +81,7 @@ export default function Footer({ onOpenBooking }) {
                   className="flex items-center gap-2.5 bg-[#1a1233] hover:bg-[#251949] p-2.5 rounded-xl border border-[#5E548E] text-xs text-gray-200 transition-colors"
                 >
                   <div className="w-7 h-7 rounded-lg bg-[#25D366] text-white flex items-center justify-center shrink-0">
-                    <MessageSquare className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4 text-white" />
                   </div>
                   <div>
                     <div className="font-bold text-white">واتساب للأعمال (القناة المعتمدة)</div>
@@ -139,7 +140,7 @@ export default function Footer({ onOpenBooking }) {
           rel="noopener noreferrer"
           className="flex-1 bg-[#25D366] text-white py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow"
         >
-          <MessageSquare className="w-3.5 h-3.5" />
+          <WhatsAppIcon className="w-4 h-4 text-white" />
           <span>مراسلة واتساب</span>
         </a>
       </div>

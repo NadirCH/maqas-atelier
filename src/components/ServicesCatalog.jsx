@@ -8,6 +8,7 @@ import {
   MessageSquare, 
   Star
 } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function ServicesCatalog({ onOpenBooking }) {
@@ -200,7 +201,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                     rel="noopener noreferrer"
                     className="flex-1 bg-[#231942] hover:bg-[#5E548E] text-[#F5F5F5] py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
                   >
-                    <MessageSquare className="w-3.5 h-3.5 text-[#E0B1CB]" />
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                     <span>طلب الخدمة عبر واتساب</span>
                   </a>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MaqasLogo from './MaqasLogo';
 import { Phone, Calendar, Clock, Menu, X, Shield, Sparkles } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function Navbar({ onOpenBooking, atelierStatus }) {
@@ -135,10 +136,10 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
               href={getWhatsAppUrl('مرحباً مقاس، أرغب في الاستفسار عن تعديل قطعة')}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#E0B1CB]/40 hover:bg-[#E0B1CB]/70 text-[#231942] p-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm"
+              className="bg-[#E0B1CB]/40 hover:bg-[#E0B1CB]/70 text-[#231942] p-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm flex items-center justify-center"
               title="تواصل مباشر عبر واتساب"
             >
-              <Phone className="w-4 h-4 text-[#231942]" />
+              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
             </a>
           </div>
 
@@ -200,7 +201,7 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
                   rel="noopener noreferrer"
                   className="w-full bg-[#5E548E] text-[#F5F5F5] py-2.5 rounded-xl font-medium flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#E0B1CB]" />
+                  <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                   <span>تواصل عبر واتساب الأعمال</span>
                 </a>
               </div>

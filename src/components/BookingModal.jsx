@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, Phone, User, Sparkles, ShieldCheck, CheckCircle2, MessageSquare, AlertCircle } from 'lucide-react';
+import { X, Calendar, Clock, Phone, User, Sparkles, ShieldCheck, CheckCircle2, AlertCircle } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
+import WhatsAppIcon from './WhatsAppIcon';
 import { sanitizeText, sanitizeNotes, validatePhone } from '../utils/sanitize';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
@@ -245,7 +246,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
               rel="noopener noreferrer"
               className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all mb-3"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4.5 h-4.5 text-white" />
               <span>إرسال تفاصيل الحجز عبر واتساب الآن</span>
             </a>
 
