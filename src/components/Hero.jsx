@@ -7,9 +7,15 @@ export default function Hero({ onOpenBooking }) {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#F5F5F5] via-[#FAF5F9] to-[#F5F5F5] select-none">
       
-      {/* Antigravity Floating Aurora Orbs (Soft, Ambient, Unintrusive) */}
-      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#E0B1CB]/25 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
-      <div className="absolute -bottom-10 -left-20 w-80 h-80 bg-[#5E548E]/15 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '3.5s' }}></div>
+      {/* Lightweight GPU-composited Ambient Accents */}
+      <div 
+        className="absolute top-1/4 -right-24 w-96 h-96 rounded-full pointer-events-none opacity-35" 
+        style={{ background: 'radial-gradient(circle, rgba(224, 177, 203, 0.35) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute -bottom-10 -left-20 w-80 h-80 rounded-full pointer-events-none opacity-25" 
+        style={{ background: 'radial-gradient(circle, rgba(94, 84, 142, 0.25) 0%, transparent 70%)' }}
+      />
       
       {/* Delicate Tailor Thread Line in Background */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg">
@@ -106,8 +112,11 @@ export default function Hero({ onOpenBooking }) {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md">
               
-              {/* Soft, Centered Ambient Aurora Glow (Clean & Centered) */}
-              <div className="absolute -inset-4 bg-gradient-to-b from-[#5E548E]/25 via-[#E0B1CB]/25 to-transparent rounded-[36px] blur-2xl pointer-events-none animate-pulse-aurora"></div>
+              {/* Soft, Centered Ambient Aurora Glow (Zero GPU overhead) */}
+              <div 
+                className="absolute -inset-4 rounded-[36px] pointer-events-none opacity-45" 
+                style={{ background: 'radial-gradient(ellipse at center, rgba(94, 84, 142, 0.35) 0%, rgba(224, 177, 203, 0.2) 50%, transparent 72%)' }} 
+              />
               
               {/* Main Atelier Visual Card (Serene, Spacious Haute Couture Glass) */}
               <div className="relative bg-[#231942]/95 backdrop-blur-xl text-[#F5F5F5] rounded-[32px] p-7 sm:p-9 shadow-2xl border border-[#5E548E]/60 overflow-hidden card-luxury">

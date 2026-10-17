@@ -6,20 +6,12 @@ import {
   Check, 
   Clock, 
   MessageSquare, 
-  Calculator, 
-  ArrowRight,
-  ShieldCheck,
   Star
 } from 'lucide-react';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function ServicesCatalog({ onOpenBooking }) {
   const [activeCategory, setActiveCategory] = useState('all');
-
-  // Interactive Calculator State
-  const [selectedGarment, setSelectedGarment] = useState('evening-dress');
-  const [selectedService, setSelectedService] = useState('contouring');
-  const [urgency, setUrgency] = useState('normal'); // 'normal' or 'express'
 
   const categories = [
     { id: 'all', name: 'جميع الخدمات' },
@@ -102,48 +94,13 @@ export default function ServicesCatalog({ onOpenBooking }) {
     ? catalog 
     : catalog.filter(item => item.category === activeCategory);
 
-  // Calculator Pricing logic (in Algerian Dinars DZD - د.ج)
-  const garmentRates = {
-    'evening-dress': { name: 'فستان سهرة أو مناسبات', base: 2500 },
-    'abaya': { name: 'عباءة راقية أو كيمونو', base: 1200 },
-    'trousers': { name: 'سروال قماشي أو جينز راقٍ', base: 600 },
-    'skirt': { name: 'تنورة مستقيمة أو ذات كسرات', base: 700 },
-    'blazer': { name: 'سترة رسمية (بليزر)', base: 1500 },
-  };
-
-  const serviceRates = {
-    'contouring': { name: 'تضييق وتجسيم القوام بالكامل', mult: 1.3, days: 3 },
-    'hemming': { name: 'تقصير الحاشية بغرزة خفية', mult: 0.8, days: 2 },
-    'zipper': { name: 'استبدال سحاب مخفي وتدعيمه', mult: 0.8, days: 2 },
-    'shoulders': { name: 'تعديل الأكتاف والأكمام', mult: 1.1, days: 3 },
-    'full-revamp': { name: 'تعديل شامل (طول وخصر وبطانة)', mult: 2.0, days: 4 },
-  };
-
-  const currentGarment = garmentRates[selectedGarment];
-  const currentService = serviceRates[selectedService];
-  const baseCost = Math.round(currentGarment.base * currentService.mult);
-  const urgencyMultiplier = urgency === 'express' ? 1.3 : 1.0;
-  const estimatedMin = Math.round(baseCost * urgencyMultiplier);
-  const estimatedMax = Math.round((baseCost + 500) * urgencyMultiplier);
-  const estimatedDays = urgency === 'express' ? '24 - 48 ساعة (خدمة سريعة)' : `${currentService.days} إلى ${currentService.days + 1} أيام عمل`;
-
   const getWhatsAppBookingUrl = (serviceName, estPrice) => {
     const text = `السلام عليكم ورحمة الله، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير المبدئي: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
     return getWhatsAppUrl(text);
   };
 
-  const getCalculatorWhatsAppUrl = () => {
-    const text = `السلام عليكم ورحمة الله، استخدمت حاسبة التقدير في موقع مَقاس، وأرغب في حجز موعد قياس لتعديل:
-- نوع القطعة: ${currentGarment.name}
-- التعديل المطلوب: ${currentService.name}
-- نوع الخدمة: ${urgency === 'express' ? 'خدمة سريعة مستعجلة (24-48 ساعة)' : 'خدمة عادية'}
-- التكلفة التقديرية: ${estimatedMin.toLocaleString()} - ${estimatedMax.toLocaleString()} د.ج
-هل يمكن تحديد موعد مناسب في محل الخياطة؟`;
-    return getWhatsAppUrl(text);
-  };
-
   return (
-    <section id="services" className="py-20 md:py-28 bg-[#F5F5F5] relative">
+    <section id="services" className="py-20 md:py-28 bg-[#F5F5F5] relative select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -178,7 +135,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCatalog.map((item) => (
             <div
               key={item.id}
@@ -259,159 +216,6 @@ export default function ServicesCatalog({ onOpenBooking }) {
 
             </div>
           ))}
-        </div>
-
-        {/* Interactive Cost & Timeline Calculator */}
-        <div className="bg-gradient-to-br from-[#231942] to-[#1c1335] text-white rounded-3xl p-6 sm:p-12 border border-[#5E548E] shadow-2xl relative overflow-hidden">
-          
-          {/* Subtle Sewing Background Line */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#E0B1CB]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E0B1CB]/20 text-[#E0B1CB] text-xs font-semibold mb-4">
-                <Calculator className="w-4 h-4" />
-                <span>حاسبة التقدير المالي والزمني</span>
-              </div>
-              <h3 className="font-amiri text-2xl sm:text-4xl font-bold text-[#F5F5F5] mb-3">
-                تقدير تكلفة تعديل أزيائكِ قبل الزيارة
-              </h3>
-              <p className="font-tajawal text-gray-300 text-sm leading-relaxed mb-6">
-                حددي نوع القطعة والتعديل المطلوب للحصول على تقدير فوري، وإرسال تفاصيل طلبكِ مباشرة عبر واتساب بكل وضوح.
-              </p>
-
-              <div className="space-y-4">
-                {/* Select Garment */}
-                <div>
-                  <label className="block text-xs font-semibold text-[#E0B1CB] mb-1.5">
-                    1. ما نوع القطعة المراد تعديلها؟
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    {Object.entries(garmentRates).map(([key, val]) => (
-                      <button
-                        key={key}
-                        onClick={() => setSelectedGarment(key)}
-                        className={`text-xs py-2.5 px-3 rounded-xl border text-right transition-all ${
-                          selectedGarment === key
-                            ? 'bg-[#E0B1CB] text-[#231942] font-bold border-[#E0B1CB]'
-                            : 'bg-[#2b1f4f] text-gray-200 border-[#5E548E]/40 hover:bg-[#34265f]'
-                        }`}
-                      >
-                        {val.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Select Service */}
-                <div>
-                  <label className="block text-xs font-semibold text-[#E0B1CB] mb-1.5">
-                    2. ما هو نوع التعديل المطلوب؟
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {Object.entries(serviceRates).map(([key, val]) => (
-                      <button
-                        key={key}
-                        onClick={() => setSelectedService(key)}
-                        className={`text-xs py-2.5 px-3 rounded-xl border text-right transition-all flex items-center justify-between ${
-                          selectedService === key
-                            ? 'bg-[#E0B1CB] text-[#231942] font-bold border-[#E0B1CB]'
-                            : 'bg-[#2b1f4f] text-gray-200 border-[#5E548E]/40 hover:bg-[#34265f]'
-                        }`}
-                      >
-                        <span>{val.name}</span>
-                        {selectedService === key && <Check className="w-3.5 h-3.5" />}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Select Urgency */}
-                <div>
-                  <label className="block text-xs font-semibold text-[#E0B1CB] mb-1.5">
-                    3. موعد التسليم المطلوب:
-                  </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button
-                      onClick={() => setUrgency('normal')}
-                      className={`text-xs py-2.5 px-3 rounded-xl border transition-all text-center ${
-                        urgency === 'normal'
-                          ? 'bg-[#5E548E] text-white font-bold border-[#E0B1CB]'
-                          : 'bg-[#2b1f4f] text-gray-300 border-[#5E548E]/40'
-                      }`}
-                    >
-                      خدمة عادية (3 - 4 أيام)
-                    </button>
-                    <button
-                      onClick={() => setUrgency('express')}
-                      className={`text-xs py-2.5 px-3 rounded-xl border transition-all text-center ${
-                        urgency === 'express'
-                          ? 'bg-[#E0B1CB] text-[#231942] font-bold border-[#E0B1CB]'
-                          : 'bg-[#2b1f4f] text-gray-300 border-[#5E548E]/40'
-                      }`}
-                    >
-                      خدمة سريعة مستعجلة (24 - 48 ساعة)
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Calculator Result Box */}
-            <div className="lg:col-span-5 bg-[#17102D] rounded-2xl p-6 sm:p-8 border border-[#5E548E]/60 flex flex-col justify-between shadow-xl">
-              <div>
-                <div className="flex items-center justify-between pb-4 border-b border-[#5E548E]/40 mb-4">
-                  <span className="text-xs text-gray-400">ملخص التقدير المبدئي:</span>
-                  <span className="text-xs font-bold text-[#E0B1CB]">محل مَقاس للخياطة</span>
-                </div>
-
-                <div className="space-y-3 mb-6 text-xs text-gray-300">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">القطعة:</span>
-                    <span className="font-semibold text-white">{currentGarment.name}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">التعديل:</span>
-                    <span className="font-semibold text-white">{currentService.name}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">المدة المتوقعة:</span>
-                    <span className="font-semibold text-[#E0B1CB]">{estimatedDays}</span>
-                  </div>
-                </div>
-
-                <div className="bg-[#231942] rounded-xl p-4 border border-[#5E548E] text-center mb-6">
-                  <span className="text-xs text-gray-300 block mb-1">التكلفة التقديرية المتوقعة:</span>
-                  <div className="font-amiri text-3xl sm:text-4xl font-bold text-[#E0B1CB]">
-                    {estimatedMin.toLocaleString()} - {estimatedMax.toLocaleString()} <span className="text-lg font-tajawal text-white">د.ج</span>
-                  </div>
-                  <span className="text-[11px] text-gray-400 mt-1 block">
-                    * يتم تأكيد السعر النهائي بدقة عند معاينة القطعة وأخذ المقاسات في المحل
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <a
-                  href={getCalculatorWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-[#E0B1CB] hover:bg-[#d69bbe] text-[#231942] py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>إرسال هذا التقدير وتأكيد الموعد عبر واتساب</span>
-                </a>
-
-                <div className="flex items-center justify-center gap-2 text-[11px] text-gray-400 mt-3">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>خصوصية تامة واستجابة سريعة خلال أوقات العمل</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
         </div>
 
       </div>

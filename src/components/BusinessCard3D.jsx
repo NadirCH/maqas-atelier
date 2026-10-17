@@ -5,42 +5,59 @@ import { getWhatsAppUrl } from '../config/siteConfig';
 
 export default function BusinessCard3D() {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
-  const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
+  const tiltWrapperRef = useRef(null);
+  const glareFrontRef = useRef(null);
+  const glareBackRef = useRef(null);
+  const rafRef = useRef(null);
 
-  // Smooth, subtle 3D Spatial Physics tracking
+  // Hardware-accelerated 3D Spatial Physics (requestAnimationFrame, zero React re-render overhead)
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || !tiltWrapperRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width; // 0 to 1
-    const y = (e.clientY - rect.top) / rect.height; // 0 to 1
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
 
-    // Antigravity micro-tilt angles (gentle, buttery-smooth damping)
-    const tiltX = (0.5 - y) * 12; // rotate around X (up/down)
-    const tiltY = (x - 0.5) * 15; // rotate around Y (left/right)
+    const tiltX = (0.5 - y) * 12;
+    const tiltY = (x - 0.5) * 15;
 
-    setTilt({ x: tiltX, y: tiltY });
-    setGlare({ x: x * 100, y: y * 100, opacity: 0.35 });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      if (tiltWrapperRef.current) {
+        tiltWrapperRef.current.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(16px)`;
+      }
+      if (glareFrontRef.current) {
+        glareFrontRef.current.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 60%)`;
+        glareFrontRef.current.style.opacity = '0.35';
+      }
+      if (glareBackRef.current) {
+        glareBackRef.current.style.background = `radial-gradient(circle at ${(1 - x) * 100}% ${y * 100}%, rgba(224, 177, 203, 0.25) 0%, rgba(224, 177, 203, 0) 65%)`;
+        glareBackRef.current.style.opacity = '0.35';
+      }
+    });
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    setTilt({ x: 0, y: 0 });
-    setGlare({ x: 50, y: 50, opacity: 0 });
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    if (tiltWrapperRef.current) {
+      tiltWrapperRef.current.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    }
+    if (glareFrontRef.current) glareFrontRef.current.style.opacity = '0';
+    if (glareBackRef.current) glareBackRef.current.style.opacity = '0';
   };
 
   return (
     <section id="business-card" className="py-20 md:py-28 bg-[#F5F5F5] relative overflow-hidden select-none">
       
-      {/* Antigravity Ambient Depth Spheres */}
-      <div className="absolute top-1/3 -left-32 w-80 h-80 bg-[#E0B1CB]/25 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
-      <div className="absolute bottom-10 -right-28 w-96 h-96 bg-[#5E548E]/15 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '3s' }}></div>
+      {/* Lightweight GPU-composited Ambient Gradients (No heavy blur filter recalculations) */}
+      <div 
+        className="absolute top-1/3 -left-32 w-80 h-80 rounded-full pointer-events-none opacity-40" 
+        style={{ background: 'radial-gradient(circle, rgba(224, 177, 203, 0.35) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-10 -right-28 w-96 h-96 rounded-full pointer-events-none opacity-30" 
+        style={{ background: 'radial-gradient(circle, rgba(94, 84, 142, 0.25) 0%, transparent 70%)' }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -74,7 +91,7 @@ export default function BusinessCard3D() {
               <span>{isFlipped ? 'معاينة الوجه الأمامي (العاجي الفاتح)' : 'معاينة الوجه الخلفي (البنفسجي المخملي)'}</span>
             </button>
 
-            <div className="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-500 font-tajawal bg-white/70 backdrop-blur-sm px-3.5 py-2 rounded-full border border-gray-200">
+            <div className="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-500 font-tajawal bg-white/80 px-3.5 py-2 rounded-full border border-gray-200">
               <Layers className="w-3.5 h-3.5 text-[#5E548E]" />
               <span>تتبع سلس للمؤشر (Fluid Tilt Physics)</span>
             </div>
@@ -84,30 +101,28 @@ export default function BusinessCard3D() {
           <div 
             ref={cardRef}
             onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={() => setIsFlipped(!isFlipped)}
             className="w-full max-w-md sm:max-w-lg aspect-[9.4/5.4] cursor-pointer relative"
             style={{ perspective: '1600px' }}
           >
-            {/* Soft Ambient Floating Shadow (Inverted tilt physics for weightlessness) */}
+            {/* Soft Ambient Floating Shadow (Pre-computed radial shadow, zero GPU lag) */}
             <div 
-              className="absolute -inset-4 bg-gradient-to-b from-[#231942]/10 via-[#5E548E]/25 to-transparent rounded-[32px] blur-2xl pointer-events-none transition-all duration-700 ease-out"
+              className="absolute -inset-4 rounded-[32px] pointer-events-none transition-opacity duration-500 opacity-60"
               style={{
-                transform: `translate3d(${-tilt.y * 1.2}px, ${-tilt.x * 1.2 + 20}px, -40px) scale(${isHovered ? 1.04 : 0.95})`,
-                opacity: isHovered ? 0.7 : 0.45
+                background: 'radial-gradient(ellipse at center, rgba(35, 25, 66, 0.22) 0%, transparent 72%)',
+                transform: 'translateY(16px)'
               }}
             />
 
-            {/* 1. Tilt Wrapper: Smooth Mouse Tracking with Soft Damping */}
+            {/* 1. Tilt Wrapper: Smooth Hardware-Accelerated Mouse Tracking */}
             <div 
+              ref={tiltWrapperRef}
               className="w-full h-full"
               style={{
                 transformStyle: 'preserve-3d',
-                transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateZ(${isHovered ? '24px' : '0px'})`,
-                transition: isHovered 
-                  ? 'transform 280ms cubic-bezier(0.2, 0.8, 0.25, 1)' 
-                  : 'transform 800ms cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: 'rotateX(0deg) rotateY(0deg) translateZ(0px)',
+                transition: 'transform 260ms cubic-bezier(0.2, 0.8, 0.25, 1)',
                 willChange: 'transform'
               }}
             >
@@ -127,19 +142,13 @@ export default function BusinessCard3D() {
                   className="absolute inset-0 w-full h-full rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-white via-[#FAF5F9] to-[#F1ECF1] border-2 border-[#E0B1CB]/40 shadow-2xl flex flex-col justify-between overflow-hidden"
                   style={{ 
                     backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    boxShadow: isHovered 
-                      ? '0 30px 60px -15px rgba(35, 25, 66, 0.18), 0 0 25px rgba(224, 177, 203, 0.3) inset' 
-                      : '0 20px 45px -12px rgba(35, 25, 66, 0.12)'
+                    WebkitBackfaceVisibility: 'hidden'
                   }}
                 >
                   {/* Dynamic Optical Glare Refraction Sheen */}
                   <div 
-                    className="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
-                    style={{
-                      background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 60%)`,
-                      opacity: glare.opacity
-                    }}
+                    ref={glareFrontRef}
+                    className="absolute inset-0 pointer-events-none transition-opacity duration-300 ease-out opacity-0"
                   />
 
                   {/* Subtle Haute Stitch Perimeter */}
@@ -184,19 +193,13 @@ export default function BusinessCard3D() {
                   style={{ 
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)',
-                    boxShadow: isHovered 
-                      ? '0 32px 70px -15px rgba(23, 16, 45, 0.65), 0 0 30px rgba(94, 84, 142, 0.35) inset' 
-                      : '0 20px 45px -12px rgba(23, 16, 45, 0.5)'
+                    transform: 'rotateY(180deg)'
                   }}
                 >
                   {/* Dynamic Optical Glare Refraction Sheen (Dark side) */}
                   <div 
-                    className="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
-                    style={{
-                      background: `radial-gradient(circle at ${100 - glare.x}% ${glare.y}%, rgba(224, 177, 203, 0.28) 0%, rgba(224, 177, 203, 0) 65%)`,
-                      opacity: glare.opacity ? glare.opacity * 1.3 : 0
-                    }}
+                    ref={glareBackRef}
+                    className="absolute inset-0 pointer-events-none transition-opacity duration-300 ease-out opacity-0"
                   />
 
                   {/* Delicate Stitch Perimeter */}

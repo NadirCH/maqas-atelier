@@ -63,13 +63,18 @@ export default function BeforeAfterSlider() {
 
   const current = cases[activeCase];
 
-  // Direct Drag Tracking
+  // Smooth Direct Drag Tracking with rAF throttling
+  const dragRaf = useRef(null);
   const updateSliderPos = (clientX) => {
     if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const pos = ((clientX - rect.left) / rect.width) * 100;
-    const clamped = Math.max(5, Math.min(95, pos));
-    setSliderPos(clamped);
+    if (dragRaf.current) cancelAnimationFrame(dragRaf.current);
+    dragRaf.current = requestAnimationFrame(() => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const pos = ((clientX - rect.left) / rect.width) * 100;
+      const clamped = Math.max(5, Math.min(95, pos));
+      setSliderPos(clamped);
+    });
   };
 
   const handlePointerDown = (e) => {
@@ -85,23 +90,28 @@ export default function BeforeAfterSlider() {
     };
     const handlePointerUp = () => {
       setIsDragging(false);
+      if (dragRaf.current) cancelAnimationFrame(dragRaf.current);
     };
 
     if (isDragging) {
-      window.addEventListener('pointermove', handlePointerMove);
+      window.addEventListener('pointermove', handlePointerMove, { passive: true });
       window.addEventListener('pointerup', handlePointerUp);
     }
     return () => {
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerup', handlePointerUp);
+      if (dragRaf.current) cancelAnimationFrame(dragRaf.current);
     };
   }, [isDragging]);
 
   return (
     <section id="before-after" className="py-20 md:py-28 bg-white relative overflow-hidden select-none">
       
-      {/* Antigravity Ambient Glow */}
-      <div className="absolute top-1/2 -right-36 w-80 h-80 bg-[#E0B1CB]/20 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
+      {/* Lightweight GPU-composited Ambient Glow */}
+      <div 
+        className="absolute top-1/2 -right-36 w-80 h-80 rounded-full pointer-events-none opacity-30" 
+        style={{ background: 'radial-gradient(circle, rgba(224, 177, 203, 0.3) 0%, transparent 70%)' }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
