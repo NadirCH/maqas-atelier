@@ -55,7 +55,7 @@ export default function Footer({ onOpenBooking }) {
                   <Clock className="w-3.5 h-3.5 text-[#E0B1CB]" />
                   <span>كل أيام الأسبوع (ما عدا الجمعة):</span>
                 </li>
-                <li className="text-white font-medium pr-5">04:30 م - 10:30 م</li>
+                <li className="text-white font-medium pr-5">من 08:00 صباحاً إلى 15:00 مساءً</li>
                 <li className="flex items-center gap-1.5 mt-2">
                   <Clock className="w-3.5 h-3.5 text-rose-400" />
                   <span>الجمعة:</span>

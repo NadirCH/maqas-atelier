@@ -12,7 +12,7 @@ export default function BookingModal({ isOpen, onClose }) {
     phone: '',
     service: 'تعديل فستان سهرة ومناسبات',
     date: '',
-    timeSlot: 'مساءً (05:00 م - 07:30 م)',
+    timeSlot: 'الفترة الصباحية (08:00 ص - 11:30 ص)',
     urgency: 'عادي (خلال 3-4 أيام)',
     notes: ''
   });
@@ -196,8 +196,8 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
                     className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5E548E] text-xs font-tajawal bg-white"
                   >
-                    <option value="مساءً (04:30 م - 07:00 م)">مساءً (04:30 م - 07:00 م)</option>
-                    <option value="ليلاً (07:30 م - 10:30 م)">ليلاً (07:30 م - 10:30 م)</option>
+                    <option value="الفترة الصباحية (08:00 ص - 11:30 ص)">الفترة الصباحية (08:00 ص - 11:30 ص)</option>
+                    <option value="فترة الظهيرة والمساء (11:30 ص - 15:00 م)">فترة الظهيرة والمساء (11:30 ص - 15:00 م)</option>
                   </select>
                 </div>
               </div>
