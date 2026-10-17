@@ -29,6 +29,11 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
       color: 'bg-emerald-500',
       badge: 'bg-emerald-50 text-emerald-800 border-emerald-200'
     },
+    fridayClosed: {
+      text: 'المحل مغلق اليوم (عطلة الجمعة) • الحجز متاح عبر واتساب',
+      color: 'bg-rose-500',
+      badge: 'bg-rose-50 text-rose-800 border-rose-200'
+    },
     returnSoon: {
       text: 'سنعود قريباً (فترة استراحة)',
       color: 'bg-amber-500',
@@ -41,7 +46,14 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
     }
   };
 
-  const currentStatus = statusConfig[atelierStatus] || statusConfig.open;
+  // Automatically detect Friday (Day 5 in JS Date) or test override via ?day=friday
+  const isFriday = typeof window !== 'undefined' && (
+    new Date().getDay() === 5 || 
+    new URLSearchParams(window.location.search).get('day') === 'friday'
+  );
+
+  const activeStatusKey = isFriday ? 'fridayClosed' : (atelierStatus || 'open');
+  const currentStatus = statusConfig[activeStatusKey] || statusConfig.open;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

@@ -18,7 +18,6 @@ export default function App() {
       {/* Top Fixed Navbar */}
       <Navbar 
         onOpenBooking={() => setIsBookingOpen(true)} 
-        atelierStatus="open"
       />
 
       {/* Main Content */}

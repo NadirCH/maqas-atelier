@@ -57,12 +57,12 @@ export default function Footer({ onOpenBooking }) {
                 </li>
                 <li className="text-white font-medium pr-5">04:30 م - 10:30 م</li>
                 <li className="flex items-center gap-1.5 mt-2">
-                  <Clock className="w-3.5 h-3.5 text-rose-300" />
+                  <Clock className="w-3.5 h-3.5 text-rose-400" />
                   <span>الجمعة:</span>
                 </li>
-                <li className="text-gray-400 pr-5">مخصص للطلبات المستعجلة</li>
+                <li className="text-rose-300 font-medium pr-5">عطلة أسبوعية (المحل مغلق)</li>
                 <li className="text-[11px] text-[#E0B1CB] mt-2">
-                  * يُستحسن دوماً حجز الموعد مسبقاً
+                  * يُستحسن دوماً حجز الموعد مسبقاً عبر واتساب
                 </li>
               </ul>
             </div>
