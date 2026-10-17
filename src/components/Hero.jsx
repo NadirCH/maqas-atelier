@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MessageSquare, Sparkles, ShieldCheck, Scissors, Ruler, Heart, Clock, Gem } from 'lucide-react';
+import { Calendar, MessageSquare, Sparkles, ShieldCheck, Scissors, Ruler, Clock } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
@@ -7,25 +7,24 @@ export default function Hero({ onOpenBooking }) {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#F5F5F5] via-[#FAF5F9] to-[#F5F5F5] select-none">
       
-      {/* Antigravity Floating Aurora Orbs */}
-      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#E0B1CB]/30 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
-      <div className="absolute -bottom-10 -left-20 w-80 h-80 bg-[#5E548E]/20 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '3.5s' }}></div>
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#E0B1CB]/15 rounded-full blur-3xl pointer-events-none animate-float-gentle"></div>
+      {/* Antigravity Floating Aurora Orbs (Soft, Ambient, Unintrusive) */}
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#E0B1CB]/25 rounded-full blur-3xl pointer-events-none animate-pulse-aurora"></div>
+      <div className="absolute -bottom-10 -left-20 w-80 h-80 bg-[#5E548E]/15 rounded-full blur-3xl pointer-events-none animate-pulse-aurora" style={{ animationDelay: '3.5s' }}></div>
       
-      {/* Spatial Tailor Thread Lines with Floating Drift */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-100,100 C300,50 400,300 800,200 C1200,100 1300,400 1700,250" fill="none" stroke="#5E548E" strokeWidth="1.5" strokeDasharray="6 6" />
-        <path d="M-50,300 C200,450 600,200 1000,400 C1400,600 1500,200 1800,350" fill="none" stroke="#E0B1CB" strokeWidth="1.2" strokeDasharray="4 8" />
+      {/* Delicate Tailor Thread Line in Background */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-100,100 C300,50 400,300 800,200 C1200,100 1300,400 1700,250" fill="none" stroke="#5E548E" strokeWidth="1.2" strokeDasharray="6 6" />
+        <path d="M-50,300 C200,450 600,200 1000,400 C1400,600 1500,200 1800,350" fill="none" stroke="#E0B1CB" strokeWidth="1" strokeDasharray="4 8" />
       </svg>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Main Hero Content (Arabic Text) */}
           <div className="lg:col-span-7 text-right">
             
             {/* Exclusive Atelier Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB]/60 text-[#231942] text-xs sm:text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB]/60 text-[#231942] text-xs sm:text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#5E548E] animate-ping"></span>
               <Sparkles className="w-4 h-4 text-[#5E548E]" />
               <span>محل خياطة نسائي خاص • مخصص للنساء حصراً</span>
@@ -48,13 +47,12 @@ export default function Hero({ onOpenBooking }) {
               في <strong className="text-[#231942] font-bold">مَقاس (MAQAS)</strong>، نعتني بإطلالتكِ ونمنحكِ تجربة استثنائية تجمع بين الراحة والخصوصية التامة. ابتعدي عن صخب المحلات المزدحمة، واستمتعي بأخذ قياسات متقنة وتعديل رفيع المستوى لفساتينكِ وأزيائكِ بأيدي خياطة خبيرة.
             </p>
 
-            {/* Primary Action Buttons with Antigravity Tactile Micro-Interactions */}
+            {/* Primary Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <button
                 onClick={onOpenBooking}
                 className="group relative bg-[#231942] hover:bg-[#342461] text-[#F5F5F5] px-7 py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-95 overflow-hidden"
               >
-                {/* Light sweep specular glare effect */}
                 <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
                 <Calendar className="w-5 h-5 text-[#E0B1CB] transition-transform group-hover:rotate-6" />
                 <span>حجز موعد قياس خاص</span>
@@ -104,23 +102,23 @@ export default function Hero({ onOpenBooking }) {
 
           </div>
 
-          {/* Visual Showcase Card & Spatial Haute Atelier Composition */}
+          {/* Visual Showcase Card & Spatial Haute Atelier Composition (Clean, Uncluttered, Elegant) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md">
               
-              {/* Outer decorative glowing ring with slow breathing animation */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#5E548E]/25 via-[#E0B1CB]/35 to-transparent rounded-3xl transform rotate-3 filter blur-md animate-pulse-aurora pointer-events-none"></div>
+              {/* Soft, Centered Ambient Aurora Glow (Clean & Centered) */}
+              <div className="absolute -inset-4 bg-gradient-to-b from-[#5E548E]/25 via-[#E0B1CB]/25 to-transparent rounded-[36px] blur-2xl pointer-events-none animate-pulse-aurora"></div>
               
-              {/* Main Atelier Visual Card with Deep Spatial Elevation */}
-              <div className="relative bg-[#231942]/95 backdrop-blur-xl text-[#F5F5F5] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#5E548E]/60 overflow-hidden card-luxury">
+              {/* Main Atelier Visual Card (Serene, Spacious Haute Couture Glass) */}
+              <div className="relative bg-[#231942]/95 backdrop-blur-xl text-[#F5F5F5] rounded-[32px] p-7 sm:p-9 shadow-2xl border border-[#5E548E]/60 overflow-hidden card-luxury">
                 
-                {/* Background delicate stitch pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 border-b-2 border-l-2 border-dashed border-[#E0B1CB]/20 rounded-bl-3xl pointer-events-none"></div>
+                {/* Background delicate stitch perimeter */}
+                <div className="absolute inset-3 border border-dashed border-[#E0B1CB]/15 rounded-2xl pointer-events-none"></div>
                 
-                {/* Card Header with Logo */}
-                <div className="flex items-center justify-between pb-6 border-b border-[#5E548E]/40 relative z-10">
+                {/* Card Header with Logo & Status */}
+                <div className="flex items-center justify-between pb-5 border-b border-[#5E548E]/40 relative z-10">
                   <div className="flex items-center gap-3">
-                    <MaqasLogo className="w-14 h-14" variant="dark" />
+                    <MaqasLogo className="w-12 h-12" variant="dark" />
                     <div>
                       <div className="font-amiri text-2xl font-bold tracking-wide text-[#F5F5F5]">مَقاس | MAQAS</div>
                       <div className="text-xs text-[#E0B1CB] font-tajawal">للخياطة النسائية وتعديل الملابس</div>
@@ -131,67 +129,44 @@ export default function Hero({ onOpenBooking }) {
                   </div>
                 </div>
 
-                {/* Central Emblem Artpiece with Weightless Levitation Physics */}
-                <div className="my-8 text-center relative py-6">
-                  {/* Circular Glow with Float Physics */}
-                  <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-b from-[#5E548E]/50 to-[#E0B1CB]/25 p-1 flex items-center justify-center relative animate-float-gentle">
-                    <div className="w-full h-full rounded-full bg-[#1e1539] flex items-center justify-center p-4 border border-[#E0B1CB]/40 shadow-inner">
-                      <MaqasLogo className="w-24 h-24" variant="dark" />
+                {/* Central Emblem Artpiece (Spacious, Serene Floating Stage) */}
+                <div className="my-8 text-center relative py-4">
+                  {/* Circular Glow with Weightless Float Physics */}
+                  <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-b from-[#5E548E]/50 to-[#E0B1CB]/25 p-1 flex items-center justify-center relative animate-float-gentle shadow-xl">
+                    <div className="w-full h-full rounded-full bg-[#1e1539] flex items-center justify-center p-5 border border-[#E0B1CB]/40 shadow-inner">
+                      <MaqasLogo className="w-20 h-20" variant="dark" />
                     </div>
-                    {/* Floating mini satellite badges */}
-                    <span className="absolute -top-2 right-3 bg-[#E0B1CB] text-[#231942] text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-lg border border-white/40 animate-float-slow">
-                      للنساء فقط
-                    </span>
-                    <span className="absolute -bottom-2 left-3 bg-[#5E548E] text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full shadow-lg border border-white/20 animate-float-reverse">
-                      حياكة راقية
-                    </span>
                   </div>
 
-                  <p className="mt-5 font-amiri text-lg text-gray-200 italic">
+                  <p className="mt-6 font-amiri text-lg text-gray-200 tracking-wide">
                     "حيث تجتمع راحة المكان مع براعة الحياكة اليدوية"
                   </p>
                 </div>
 
-                {/* Live Atelier Feature Box */}
-                <div className="bg-[#1a1233]/90 rounded-2xl p-4 border border-[#5E548E]/50 backdrop-blur-md relative z-10">
-                  <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="text-gray-300 font-medium flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                      قناة واتساب للأعمال الرسمية
-                    </span>
-                    <span className="text-[#E0B1CB] text-[11px] font-mono">+213 550 00 00 00</span>
+                {/* Sleek Minimalist WhatsApp Reception Pill (Uncluttered & Clean) */}
+                <a
+                  href={getWhatsAppUrl('السلام عليكم، أرغب في حجز موعد قياس لدى مَقاس')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between bg-white/10 hover:bg-white/15 border border-[#E0B1CB]/30 rounded-2xl p-3.5 text-xs text-gray-200 transition-all duration-300 group hover:-translate-y-0.5 active:scale-98 shadow-sm backdrop-blur-md relative z-10"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] shrink-0">
+                      <MessageSquare className="w-4 h-4" />
+                    </div>
+                    <div className="text-right">
+                      <div className="font-bold text-white text-xs flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>واتساب للأعمال المعتمد</span>
+                      </div>
+                      <div className="text-[10px] text-gray-400">متاح للاستفسار وحجز المواعيد</div>
+                    </div>
                   </div>
-                  <p className="text-xs text-gray-400 leading-relaxed mb-3">
-                    تصفحي كتالوج التقديرات، وتابعي جاهزية القطع للاستلام عبر تطبيق واتساب مباشرة.
-                  </p>
-                  <a
-                    href={getWhatsAppUrl('السلام عليكم، أرغب في حجز موعد قياس لدى مَقاس')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-[#E0B1CB] hover:bg-[#d89fbe] text-[#231942] py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5" />
-                    <span>مراسلة عبر تطبيق واتساب الآن</span>
-                  </a>
-                </div>
+                  <span className="text-[#E0B1CB] font-mono text-xs font-medium" dir="ltr">
+                    +213 550 00 00 00
+                  </span>
+                </a>
 
-              </div>
-
-              {/* Spatial Floating Badge on bottom right (Suspended with float physics) */}
-              <div className="absolute -bottom-5 -right-4 bg-white/95 backdrop-blur-md text-[#231942] p-3.5 rounded-2xl shadow-2xl border border-white/80 flex items-center gap-3 text-xs animate-float-slow z-20">
-                <div className="w-8 h-8 rounded-full bg-[#E0B1CB]/40 flex items-center justify-center text-[#5E548E]">
-                  <Heart className="w-4 h-4 fill-current text-[#5E548E]" />
-                </div>
-                <div>
-                  <div className="font-bold">أمان تام واطمئنان</div>
-                  <div className="text-[10px] text-gray-500">محل خياطة معتمد ومصون بالكامل</div>
-                </div>
-              </div>
-
-              {/* Spatial Floating Badge on top left (VIP Experience) */}
-              <div className="absolute -top-4 -left-4 bg-[#231942]/90 backdrop-blur-md text-white px-3 py-1.5 rounded-xl shadow-xl border border-[#E0B1CB]/30 flex items-center gap-2 text-[11px] animate-float-reverse z-20">
-                <Gem className="w-3.5 h-3.5 text-[#E0B1CB]" />
-                <span>حياكة متقنة وتفصيل هادئ</span>
               </div>
 
             </div>
