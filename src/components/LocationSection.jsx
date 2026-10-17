@@ -22,7 +22,7 @@ export default function LocationSection() {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/25 border border-[#E0B1CB]/50 text-[#5E548E] text-xs font-semibold mb-3">
             <MapPin className="w-3.5 h-3.5 text-[#5E548E]" />
-            <span>موقع الأتليه وخريطة الوصول • Atelier Location</span>
+            <span>موقع الأتليه وخريطة الوصول • السانية، وهران</span>
           </div>
           <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-[#231942]">
             موقع محل مَقاس وخريطة الوصول
@@ -33,8 +33,8 @@ export default function LocationSection() {
         <div className="bg-[#FAF5F9] rounded-[32px] p-3 sm:p-5 border border-[#E0B1CB]/40 shadow-xl overflow-hidden">
           <div className="relative w-full h-[360px] sm:h-[480px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#5E548E]/20 shadow-inner bg-[#231942]">
             <iframe
-              title="موقع محل مَقاس على الخريطة"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=3.0300%2C36.7350%2C3.0800%2C36.7650&amp;layer=mapnik&amp;marker=36.7500%2C3.0550"
+              title="موقع محل مَقاس على الخريطة - السانية، وهران"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.6450%2C35.6350%2C-0.6050%2C35.6650&amp;layer=mapnik&amp;marker=35.6501%2C-0.6242"
               className="w-full h-full border-0 filter contrast-105"
               loading="lazy"
             />
@@ -47,18 +47,19 @@ export default function LocationSection() {
                 </div>
                 <div>
                   <div className="font-amiri font-bold text-base text-white">محل مَقاس (MAQAS)</div>
-                  <div className="text-[10px] text-[#E0B1CB]">للخياطة النسائية وتعديل الملابس</div>
+                  <div className="text-[10px] text-[#E0B1CB]">السانية، وهران • للخياطة النسائية</div>
                 </div>
               </div>
-              <div className="text-[11px] text-gray-300 font-tajawal pt-1 border-t border-white/10">
-                مخصص للنساء حصراً
+              <div className="text-[11px] text-gray-300 font-tajawal pt-1 border-t border-white/10 flex items-center justify-between gap-3">
+                <span className="font-medium text-white">السانية • وهران</span>
+                <span className="text-[#E0B1CB]">مخصص للنساء حصراً</span>
               </div>
             </div>
 
             {/* Bottom Quick Directions Bar */}
             <div className="absolute bottom-4 inset-x-4 flex items-center justify-between gap-2 bg-[#231942]/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-white/10 text-xs">
               <span className="text-gray-200 font-tajawal text-xs pr-2 hidden sm:inline">
-                اضغطي لفتح اتجاهات القيادة مباشرة
+                اضغطي لفتح اتجاهات القيادة مباشرة إلى السانية، وهران
               </span>
               <a
                 href={siteConfig.googleMapsUrl}

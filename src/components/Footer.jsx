@@ -37,7 +37,7 @@ export default function Footer({ onOpenBooking }) {
                 <li><a href="#services" className="hover:text-white transition-colors">دليل الخدمات والأسعار</a></li>
                 <li><a href="#before-after" className="hover:text-white transition-colors">معرض الأعمال (قبل وبعد)</a></li>
                 <li><a href="#business-card" className="hover:text-white transition-colors">بطاقة التعريف</a></li>
-                <li><a href="#location" className="hover:text-white transition-colors">موقع المحل والخريطة</a></li>
+                <li><a href="#location" className="hover:text-white transition-colors">موقع المحل (السانية، وهران)</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">الأسئلة الشائعة</a></li>
               </ul>
             </div>
@@ -120,7 +120,7 @@ export default function Footer({ onOpenBooking }) {
           {/* Bottom Copyright & Manifesto */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-tajawal gap-4 text-center sm:text-right">
             <div>
-              جميع الحقوق محفوظة © 2026 <strong>محل مَقاس (MAQAS) للخياطة</strong> النسائية وتعديل الملابس.
+              جميع الحقوق محفوظة © 2026 <strong>محل مَقاس (MAQAS) للخياطة</strong> النسائية وتعديل الملابس • السانية، وهران.
             </div>
             <div className="flex items-center gap-2 text-[#E0B1CB]">
               <Heart className="w-3.5 h-3.5 text-[#E0B1CB] fill-current" />
