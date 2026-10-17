@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MessageSquare, Sparkles, ShieldCheck, Scissors, Ruler, Clock } from 'lucide-react';
+import { Calendar, MessageSquare, Sparkles, Scissors } from 'lucide-react';
 import MaqasLogo from './MaqasLogo';
 import { getWhatsAppUrl } from '../config/siteConfig';
 
@@ -54,7 +54,7 @@ export default function Hero({ onOpenBooking }) {
             </p>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenBooking}
                 className="group relative bg-[#231942] hover:bg-[#342461] text-[#F5F5F5] px-7 py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-95 overflow-hidden"
@@ -71,39 +71,6 @@ export default function Hero({ onOpenBooking }) {
                 <Scissors className="w-5 h-5 text-[#5E548E]" />
                 <span>كتالوج الخدمات والأسعار</span>
               </a>
-            </div>
-
-            {/* Key Trust Highlights (Three Glassmorphic Pillars) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-6 border-t border-[#E0B1CB]/40">
-              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
-                  <ShieldCheck className="w-5 h-5 text-[#5E548E]" />
-                </div>
-                <div>
-                  <div className="font-bold text-xs text-[#231942]">خصوصية تامة 100%</div>
-                  <div className="text-[11px] text-gray-500">بيئة نسائية آمنة ومحمية بالكامل</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
-                  <Ruler className="w-5 h-5 text-[#5E548E]" />
-                </div>
-                <div>
-                  <div className="font-bold text-xs text-[#231942]">دقة متناهية في الحياكة</div>
-                  <div className="text-[11px] text-gray-500">فساتين سهرة وأعراس وأزياء راقية</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/75 backdrop-blur-md p-3.5 rounded-2xl border border-[#E0B1CB]/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[#E0B1CB]/25 flex items-center justify-center shrink-0 text-[#231942]">
-                  <Clock className="w-5 h-5 text-[#5E548E]" />
-                </div>
-                <div>
-                  <div className="font-bold text-xs text-[#231942]">مواعيد دقيقة دون انتظار</div>
-                  <div className="text-[11px] text-gray-500">استقبال منظم في بيئة هادئة ومريحة</div>
-                </div>
-              </div>
             </div>
 
           </div>
