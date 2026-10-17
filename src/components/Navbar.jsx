@@ -54,7 +54,7 @@ export default function Navbar({ onOpenBooking, atelierStatus }) {
         </span>
         <span className="opacity-40">•</span>
         <span className="hidden sm:inline text-gray-200">
-          أتيلييه نسائي خاص لتعديل الملابس والفساتين الراقية
+          محل خياطة نسائي خاص لتعديل الملابس والفساتين الراقية
         </span>
         <span className="hidden sm:inline opacity-40">•</span>
         <span className="flex items-center gap-1 text-[#E0B1CB]">

@@ -22,7 +22,7 @@ export default function Footer({ onOpenBooking }) {
               </div>
 
               <p className="font-tajawal text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md mb-6">
-                أتيلييه نسائي خاص يعيد تعريف تجربة تعديل الملابس الراقية. نوفر لكِ الخصوصية المطلقة والراحة التامة أثناء القياس، وكأنكِ في غرفتكِ الخاصة.
+                محل خياطة نسائي خاص يعيد تعريف تجربة تعديل الملابس الراقية. نوفر لكِ الخصوصية المطلقة والراحة التامة أثناء القياس، وكأنكِ في غرفتكِ الخاصة.
               </p>
 
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1333] border border-[#5E548E] text-[11px] text-[#E0B1CB]">
@@ -114,11 +114,11 @@ export default function Footer({ onOpenBooking }) {
           {/* Bottom Copyright & Manifesto */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-tajawal gap-4 text-center sm:text-right">
             <div>
-              جميع الحقوق محفوظة © 2026 <strong>أتيلييه مَقاس (MAQAS)</strong> للخياطة النسائية وتعديل الملابس.
+              جميع الحقوق محفوظة © 2026 <strong>محل مَقاس (MAQAS) للخياطة</strong> النسائية وتعديل الملابس.
             </div>
             <div className="flex items-center gap-2 text-[#E0B1CB]">
               <Heart className="w-3.5 h-3.5 text-[#E0B1CB] fill-current" />
-              <span>مخصص للنساء فقط • أتيلييه نسائي خاص</span>
+              <span>مخصص للنساء فقط • محل خياطة نسائي خاص</span>
             </div>
           </div>
 

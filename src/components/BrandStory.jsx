@@ -38,14 +38,14 @@ export default function BrandStory() {
                 </div>
                 <div>
                   <h3 className="font-amiri text-2xl sm:text-3xl font-bold text-[#231942]">
-                    أتيلييه نسائي خاص (Private Atelier)
+                    محل خياطة نسائي خاص (Private Tailoring Boutique)
                   </h3>
                   <span className="text-xs font-tajawal text-[#5E548E] font-medium">الراحة التامة والخصوصية المطلقة</span>
                 </div>
               </div>
 
               <p className="font-tajawal text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
-                يتحول صغر مساحة محل <strong>"مَقاس (MAQAS)"</strong> من تحدٍ لوجستي إلى ميزة تنافسية فريدة؛ حيث يُعاد تعريفه ليكون <strong>"أتيلييه نسائي خاص"</strong> يمنح الزبونة شعوراً بالراحة التامة والخصوصية المطلقة أثناء القياس والتعديل.
+                يتحول صغر مساحة محل <strong>"مَقاس (MAQAS)"</strong> من تحدٍ لوجستي إلى ميزة تنافسية فريدة؛ حيث يُعاد تعريفه ليكون <strong>"محل خياطة نسائي خاص"</strong> يمنح الزبونة شعوراً بالراحة التامة والخصوصية المطلقة أثناء القياس والتعديل.
               </p>
 
               <blockquote className="border-r-4 border-[#5E548E] pr-4 py-2 my-6 bg-white/70 rounded-l-xl text-[#231942] font-amiri text-xl italic leading-relaxed">

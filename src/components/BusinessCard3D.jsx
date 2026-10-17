@@ -16,7 +16,7 @@ export default function BusinessCard3D() {
             <span>مواصفات بطاقة العمل الرسمية • Business Card 300 DPI</span>
           </div>
           <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-[#231942] mb-4">
-            بطاقة عمل الأتيلييه المعتمدة
+            بطاقة عمل محل الخياطة المعتمدة
           </h2>
           <p className="font-tajawal text-gray-600 text-base sm:text-lg leading-relaxed">
             وفقاً لدليل الهوية (صفحة 3): مقاس 9.4 × 5.4 سم بدقة 300 DPI. وجه أمامي فاتح يحمل اللوغو، ووجه خلفي داكن بدرجة #231942 يبرز الخدمات وقناة الواتساب.
@@ -79,7 +79,7 @@ export default function BusinessCard3D() {
 
                 {/* Bottom Bar */}
                 <div className="flex items-center justify-between border-t border-gray-200/80 pt-3 text-[11px] text-gray-600 font-tajawal">
-                  <span>أتيلييه نسائي خاص</span>
+                  <span>محل خياطة نسائي خاص</span>
                   <span className="text-[#5E548E] font-medium">النسخة الاحترافية 2026</span>
                 </div>
               </div>

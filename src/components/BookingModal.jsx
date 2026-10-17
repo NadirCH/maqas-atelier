@@ -57,7 +57,7 @@ export default function BookingModal({ isOpen, onClose }) {
     const safeUrgency = sanitizeText(formData.urgency, 50);
     const safeNotes = sanitizeNotes(formData.notes, 300);
 
-    const message = `السلام عليكم أتيلييه مقاس، أود تأكيد حجز موعد قياس خاص:
+    const message = `السلام عليكم محل مقاس للخياطة، أود تأكيد حجز موعد قياس خاص:
 - الاسم: ${safeName}
 - نوع الخدمة: ${safeService}
 - التاريخ المفضل: ${safeDate}
@@ -103,7 +103,7 @@ ${safeNotes ? `- ملاحظات: ${safeNotes}` : ''}
             <div className="bg-[#FAF5F9] border border-[#E0B1CB] rounded-2xl p-3 mb-6 flex items-center gap-2.5 text-xs text-[#231942]">
               <ShieldCheck className="w-5 h-5 text-[#5E548E] shrink-0" />
               <span>
-                <strong>تذكير مهم:</strong> الأتيلييه مخصص للنساء فقط 100%. نضمن لكِ خصوصية تامة دون أي انتظار.
+                <strong>تذكير مهم:</strong> محل الخياطة مخصص للنساء فقط 100%. نضمن لكِ خصوصية تامة دون أي انتظار.
               </span>
             </div>
 

@@ -16,13 +16,13 @@ export default function PrivacyPillars() {
     },
     {
       icon: <Home className="w-6 h-6 text-[#E0B1CB]" />,
-      title: 'أتيلييه خاص ومريح كغرفتكِ الخاصة',
+      title: 'محل خياطة خاص ومريح كغرفتكِ الخاصة',
       desc: 'صُممت مساحة مَقاس لتكون ملاذاً هادئاً، بعيداً عن زحام وهرج الأسواق العامة. أريكة مريحة، إضاءة دافئة، ومرآة ثلاثية لتأمل إطلالتكِ بهدوء.'
     },
     {
       icon: <UserCheck className="w-6 h-6 text-[#E0B1CB]" />,
       title: 'مواعيد فردية خاصة دون تداخل',
-      desc: 'نظام مواعيد فردي مدروس؛ عند حضوركِ لجلسة القياس، يكون الأتيلييه مكرساً لكِ وحدكِ دون وجود زبونات أخريات ينتظرن، لمنحكِ الوقت الكافي.'
+      desc: 'نظام مواعيد فردي مدروس؛ عند حضوركِ لجلسة القياس، يكون محل الخياطة مكرساً لكِ وحدكِ دون وجود زبونات أخريات ينتظرن، لمنحكِ الوقت الكافي.'
     }
   ];
 
@@ -51,7 +51,7 @@ export default function PrivacyPillars() {
             </h3>
 
             <p className="font-tajawal text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              هذه العبارة ليست مجرد لافتة على مدخلنا، بل هي ميثاق الأمان والراحة التامة لكل سيدة تضع ثقتها في أتيلييه "مَقاس".
+              هذه العبارة ليست مجرد لافتة على مدخلنا، بل هي ميثاق الأمان والراحة التامة لكل سيدة تضع ثقتها في محل "مَقاس" للخياطة.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-[#E0B1CB]">
@@ -103,7 +103,7 @@ export default function PrivacyPillars() {
 
               <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-bold text-[#5E548E]">
                 <Sparkles className="w-3 h-3 text-[#E0B1CB]" />
-                <span>معيار معتمد في أتيلييه مَقاس</span>
+                <span>معيار معتمد في محل مَقاس للخياطة</span>
               </div>
             </div>
           ))}

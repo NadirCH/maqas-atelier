@@ -26,7 +26,7 @@ export default function Hero({ onOpenBooking }) {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0B1CB]/30 border border-[#E0B1CB] text-[#231942] text-xs sm:text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-[#5E548E] animate-ping"></span>
               <Sparkles className="w-4 h-4 text-[#5E548E]" />
-              <span>أتيلييه نسائي خاص • مخصص للنساء فقط</span>
+              <span>محل خياطة نسائي خاص • مخصص للنساء فقط</span>
             </div>
 
             {/* Main Brand Title in Amiri */}
@@ -123,7 +123,7 @@ export default function Hero({ onOpenBooking }) {
                     </div>
                   </div>
                   <div className="px-2.5 py-1 rounded-full bg-[#E0B1CB]/15 border border-[#E0B1CB]/30 text-[#E0B1CB] text-[11px] font-medium">
-                    أتيلييه خاص
+                    محل خياطة خاص
                   </div>
                 </div>
 
@@ -180,7 +180,7 @@ export default function Hero({ onOpenBooking }) {
                 </div>
                 <div>
                   <div className="font-bold">أمان تام واطمئنان</div>
-                  <div className="text-[10px] text-gray-500">أتيلييه معتمد ومحمي بالكامل</div>
+                  <div className="text-[10px] text-gray-500">محل خياطة معتمد ومحمي بالكامل</div>
                 </div>
               </div>
 

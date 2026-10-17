@@ -39,7 +39,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
       price: 'من 120 إلى 280 ر.س',
       time: '3 إلى 5 أيام',
       featured: true,
-      features: ['تعديل طبقات التول والبطانة يدوياً', 'حماية التطريز والخرز الحساس', 'قياس فردي وتجربة في الأتيلييه']
+      features: ['تعديل طبقات التول والبطانة يدوياً', 'حماية التطريز والخرز الحساس', 'قياس فردي وتجربة في محل الخياطة']
     },
     {
       id: 2,
@@ -128,17 +128,17 @@ export default function ServicesCatalog({ onOpenBooking }) {
   const estimatedDays = urgency === 'express' ? '24 - 48 ساعة (خدمة سريعة)' : `${currentService.days} إلى ${currentService.days + 1} أيام عمل`;
 
   const getWhatsAppBookingUrl = (serviceName, estPrice) => {
-    const text = `مرحباً أتيلييه مقاس، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
+    const text = `مرحباً محل مقاس للخياطة، أود الاستفسار وحجز موعد لخدمة: ${serviceName} (التقدير: ${estPrice}). هل يمكن تحديد موعد قياس مناسب؟`;
     return getWhatsAppUrl(text);
   };
 
   const getCalculatorWhatsAppUrl = () => {
-    const text = `مرحباً أتيلييه مقاس، استخدمت حاسبة الأسعار وأرغب في حجز موعد لتعديل:
+    const text = `مرحباً محل مقاس للخياطة، استخدمت حاسبة الأسعار وأرغب في حجز موعد لتعديل:
 - نوع القطعة: ${currentGarment.name}
 - التعديل المطلوب: ${currentService.name}
 - نوع الموعد: ${urgency === 'express' ? 'مستعجل VIP (24-48 ساعة)' : 'عادي'}
 - التكلفة التقديرية: ${estimatedMin} - ${estimatedMax} ر.س.
-هل يتوفر موعد قياس في الأتيلييه؟`;
+هل يتوفر موعد قياس في محل الخياطة؟`;
     return getWhatsAppUrl(text);
   };
 
@@ -250,7 +250,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
                   <button
                     onClick={onOpenBooking}
                     className="bg-[#E0B1CB]/30 hover:bg-[#E0B1CB]/60 text-[#231942] p-2.5 rounded-xl text-xs transition-colors"
-                    title="حجز موعد في الأتيلييه"
+                    title="حجز موعد في محل الخياطة"
                   >
                     <Ruler className="w-4 h-4 text-[#5E548E]" />
                   </button>
@@ -363,7 +363,7 @@ export default function ServicesCatalog({ onOpenBooking }) {
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-[#5E548E]/40 mb-4">
                   <span className="text-xs text-gray-400">ملخص التقدير المبدئي:</span>
-                  <span className="text-xs font-bold text-[#E0B1CB]">أتيلييه مَقاس</span>
+                  <span className="text-xs font-bold text-[#E0B1CB]">محل مَقاس للخياطة</span>
                 </div>
 
                 <div className="space-y-3 mb-6 text-xs text-gray-300">
