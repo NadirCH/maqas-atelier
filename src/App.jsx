@@ -39,9 +39,7 @@ export default function App() {
         <BusinessCard3D />
 
         {/* 5. Location & Map Section */}
-        <LocationSection 
-          onOpenBooking={() => setIsBookingOpen(true)} 
-        />
+        <LocationSection />
 
         {/* 6. Frequently Asked Questions */}
         <FaqSection />
